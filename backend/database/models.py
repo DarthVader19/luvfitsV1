@@ -1,49 +1,132 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, Boolean
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+"""
+MongoDB models using Pydantic for type safety and validation.
+"""
 from datetime import datetime
+from typing import List, Optional
+from pydantic import BaseModel, Field
 
-DATABASE_URL = "sqlite:///./luvfits.db"
 
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+class Product(BaseModel):
+    """Product model for MongoDB storage."""
+    id: Optional[str] = Field(None, alias="_id")
+    name: str
+    price: float
+    currency: str = "USD"
+    color: str
+    color_family: str  # neutral, warm, cool, primary
+    description: str
+    image_url: str
+    product_url: str  # Unique constraint handled by MongoDB
+    category: str  # From Google taxonomy
+    subcategory: Optional[str] = None
+    site: str  # H&M, Amazon, Nordstrom
+    tags: List[str] = []  # Vibes: casual, party, elegant, etc.
+    style_score: float = Field(default=0.5, ge=0, le=1)  # Likeability score
+    embedding: Optional[List[float]] = None  # Vector embedding for vibe search
+    available: bool = True
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)
 
-Base = declarative_base()
+    class Config:
+        populate_by_name = True
 
-class Product(Base):
-    __tablename__ = "products"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
-    price = Column(Float)
-    color = Column(String, index=True)
-    description = Column(String)
-    image_url = Column(String)
-    product_url = Column(String, unique=True, index=True)
-    category = Column(String, index=True)  # Tops, Bottoms, Accessories, Shoes
-    site = Column(String, index=True)  # hm, amazon, nordstrom
-    tags = Column(String)  # comma separated tags for vibes
-    style_score = Column(Float, default=0.5)  # Likeability score 0-1
-    color_family = Column(String)  # primary, neutral, warm, cool
-    available = Column(Boolean, default=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+class Outfit(BaseModel):
+    """Bundled outfit containing 4 pieces."""
+    id: Optional[str] = Field(None, alias="_id")
+    top_id: str
+    bottom_id: str
+    shoe_id: str
+    accessory_id: str
+    vibes: List[str] = []  # e.g., ["casual", "90s", "date night"]
+    compatibility_score: float = Field(default=0.0, ge=0, le=1)
+    color_harmony: float = Field(default=0.0, ge=0, le=1)
+    total_price: float = 0.0
+    embedding: Optional[List[float]] = None  # Vector for outfit-level search
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)
 
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'price': self.price,
-            'color': self.color,
-            'description': self.description,
-            'image_url': self.image_url,
-            'product_url': self.product_url,
-            'category': self.category,
-            'site': self.site,
-            'tags': self.tags,
-            'style_score': self.style_score,
-            'color_family': self.color_family
-        }
+    class Config:
+        populate_by_name = True
 
-def init_db():
-    Base.metadata.create_all(bind=engine)
+
+class ScrapingJob(BaseModel):
+    """Track scraping jobs and their status."""
+    id: Optional[str] = Field(None, alias="_id")
+    site: str
+    status: str  # pending, running, completed, failed
+    products_scraped: int = 0
+    products_stored: int = 0
+    errors: List[str] = []
+    started_at: datetime = Field(default_factory=datetime.utcnow)
+    completed_at: Optional[datetime] = None
+
+    class Config:
+        populate_by_name = True
+
+
+class SearchQuery(BaseModel):
+    """Store search queries for analytics."""
+    id: Optional[str] = Field(None, alias="_id")
+    query: str
+    embedding: Optional[List[float]] = None
+    results_count: int = 0
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+
+    class Config:
+        populate_by_name = True
+
+
+# Request/Response schemas for API
+
+
+class ProductResponse(BaseModel):
+    """Response model for product endpoints."""
+    id: str = Field(alias="_id")
+    name: str
+    price: float
+    currency: str
+    color: str
+    category: str
+    subcategory: Optional[str]
+    site: str
+    image_url: str
+    product_url: str
+    tags: List[str]
+    style_score: float
+    available: bool
+
+    class Config:
+        populate_by_name = True
+
+
+class OutfitResponse(BaseModel):
+    """Response model for outfit endpoints."""
+    id: str = Field(alias="_id")
+    top: ProductResponse
+    bottom: ProductResponse
+    shoes: ProductResponse
+    accessory: ProductResponse
+    vibes: List[str]
+    compatibility_score: float
+    color_harmony: float
+    total_price: float
+
+    class Config:
+        populate_by_name = True
+
+
+class SearchRequest(BaseModel):
+    """Request body for search endpoint."""
+    query: str
+    limit: int = 10
+    include_vibes: bool = True
+
+
+class RefreshResponse(BaseModel):
+    """Response from refresh endpoint."""
+    status: str
+    message: str
+    products_total: int = 0
+    outfits_generated: int = 0
+    timestamp: datetime = Field(default_factory=datetime.utcnow)

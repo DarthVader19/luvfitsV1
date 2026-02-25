@@ -1,168 +1,159 @@
-import time
-import random
+"""
+Base scraper class using Scrape.do API for all sites.
+"""
+import asyncio
 import logging
+import os
+from typing import List, Dict, Any
 from abc import ABC, abstractmethod
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
+import aiohttp
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 
+
 class BaseScraper(ABC):
-    """Base class for all site-specific scrapers"""
-    
-    def __init__(self, site_name: str):
-        self.site_name = site_name
-        self.products = []
-        self.driver = None
-        self.wait_time = 10
-        
-    @abstractmethod
-    def get_category_url(self, category: str) -> str:
-        """Return URL for a specific category"""
-        pass
-    
-    @abstractmethod
-    def extract_products(self, soup) -> list:
-        """Extract products from beautifulsoup object"""
-        pass
-    
-    def get_driver(self):
-        """Initialize Chrome webdriver with anti-detection measures"""
-        options = Options()
-        options.add_argument("--headless")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--disable-blink-features=AutomationControlled")
-        options.add_argument("--user-data-dir=/tmp/chrome")
-        options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
-        options.add_argument("--start-maximized")
-        
-        driver = webdriver.Chrome(options=options)
-        driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => false})")
-        return driver
-    
-    def fetch_page(self, url: str, retry_count: int = 3) -> str:
-        """Fetch page content with retries and delays"""
-        for attempt in range(retry_count):
-            try:
-                if self.driver is None:
-                    self.driver = self.get_driver()
-                
-                self.driver.get(url)
-                time.sleep(random.uniform(2, 5))
-                
-                # Wait for main content to load
-                WebDriverWait(self.driver, self.wait_time).until(
-                    EC.presence_of_all_elements_located((By.TAG_NAME, "body"))
-                )
-                
-                return self.driver.page_source
-            except TimeoutException:
-                logger.warning(f"Timeout on attempt {attempt + 1} for {url}")
-                if attempt < retry_count - 1:
-                    time.sleep(random.uniform(5, 10))
-            except Exception as e:
-                logger.error(f"Error fetching {url}: {str(e)}")
-                if attempt < retry_count - 1:
-                    time.sleep(random.uniform(5, 10))
-    
-        return None
-    
-    def parse_html(self, html: str):
-        """Parse HTML and extract products"""
-        if not html:
-            logger.error("No HTML content to parse")
-            return []
-        
-        soup = BeautifulSoup(html, 'html.parser')
-        return self.extract_products(soup)
-    
-    def generate_tags(self, name: str, description: str, category: str, color: str = "") -> str:
-        """Generate tags based on product attributes"""
-        tags = set()
-        text = (name + ' ' + description + ' ' + color).lower()
-        
-        # Style tags
-        if any(word in text for word in ['jeans', 'denim']):
-            tags.add('casual')
-        if any(word in text for word in ['dress', 'blouse', 'blazer']):
-            tags.add('elegant')
-        if any(word in text for word in ['hoodie', 'sweater', 'tee']):
-            tags.add('casual')
-        
-        # Color tags
-        if any(word in text for word in ['black', 'navy', 'charcoal', 'dark']):
-            tags.add('dark')
-        if any(word in text for word in ['white', 'cream', 'beige', 'light']):
-            tags.add('light')
-        if any(word in text for word in ['red', 'pink', 'magenta']):
-            tags.add('warm')
-        if any(word in text for word in ['blue', 'teal', 'purple']):
-            tags.add('cool')
-        
-        # Occasion tags
-        if any(word in text for word in ['heel', 'stiletto', 'formal']):
-            tags.add('formal')
-        if any(word in text for word in ['sneaker', 'trainer', 'casual']):
-            tags.add('sporty')
-        if any(word in text for word in ['party', 'night', 'dance', 'glitter']):
-            tags.add('party')
-        if any(word in text for word in ['90s', 'retro', 'vintage', 'grunge']):
-            tags.add('90s')
-        if any(word in text for word in ['minimalist', 'simple', 'plain']):
-            tags.add('minimalist')
-        
-        # Fallback
-        if not tags:
-            tags.add('neutral')
-        
-        return ', '.join(sorted(tags))
-    
-    def get_color_family(self, color: str) -> str:
-        """Categorize color into family"""
-        color = color.lower() if color else ""
-        
-        if any(c in color for c in ['black', 'white', 'gray', 'grey']):
-            return 'neutral'
-        elif any(c in color for c in ['red', 'orange', 'yellow', 'brown']):
-            return 'warm'
-        elif any(c in color for c in ['blue', 'green', 'purple', 'teal']):
-            return 'cool'
-        elif any(c in color for c in ['pink', 'rose', 'coral']):
-            return 'warm'
-        else:
-            return 'neutral'
-    
-    def scrape(self, category: str, num_products: int = 25) -> list:
-        """Main scraping method"""
-        products = []
-        url = self.get_category_url(category)
-        
-        if not url:
-            logger.error(f"Invalid category: {category}")
-            return []
-        
+    """Base class for all scrapers using Scrape.do."""
+
+    SCRAPE_DO_URL = "https://api.scrape.do"
+
+    def __init__(self):
+        self.api_key = os.getenv("SCRAPE_DO_API_KEY", "")
+        self.session: aiohttp.ClientSession = None
+        self.site_name = "Unknown"
+        self.base_url = ""
+
+    async def __aenter__(self):
+        """Async context manager entry."""
+        self.session = aiohttp.ClientSession()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        """Async context manager exit."""
+        if self.session:
+            await self.session.close()
+
+    async def scrape_page(self, url: str, render_js: bool = True) -> str:
+        """
+        Scrape a page using Scrape.do API.
+
+        Args:
+            url: The URL to scrape
+            render_js: Whether to render JavaScript
+        Returns:
+            HTML content of the page
+        """
         try:
-            html = self.fetch_page(url)
-            if html:
-                products = self.parse_html(html)
-                logger.info(f"Scraped {len(products)} products from {self.site_name} - {category}")
+            params = {
+                "url": url,
+                "render": "true" if render_js else "false",
+                "timeout": "30000",
+            }
+
+            if self.api_key:
+                params["token"] = self.api_key
+
+            # Using proxy-style request
+            scrape_url = f"{self.SCRAPE_DO_URL}?url={url}"
+            if render_js:
+                scrape_url += "&render=true"
+
+            async with self.session.get(
+                scrape_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30
+            ) as response:
+                if response.status == 200:
+                    return await response.text()
+                else:
+                    logger.error(f"Failed to scrape {url}: {response.status}")
+                    return ""
+        except asyncio.TimeoutError:
+            logger.error(f"Timeout scraping {url}")
+            return ""
         except Exception as e:
-            logger.error(f"Error scraping {self.site_name}: {str(e)}")
-        finally:
-            if self.driver:
-                self.driver.quit()
-                self.driver = None
-        
-        return products[:num_products]
-    
-    def close(self):
-        """Close driver"""
-        if self.driver:
-            self.driver.quit()
-            self.driver = None
+            logger.error(f"Error scraping {url}: {e}")
+            return ""
+
+    def parse_html(self, html: str) -> BeautifulSoup:
+        """Parse HTML content."""
+        return BeautifulSoup(html, "html.parser")
+
+    @abstractmethod
+    async def scrape(self) -> List[Dict[str, Any]]:
+        """
+        Scrape data from the site.
+        Must be implemented by subclasses.
+        """
+        pass
+
+    def extract_color_family(self, color: str) -> str:
+        """Extract color family from color name."""
+        color_lower = color.lower()
+
+        if any(word in color_lower for word in ["white", "black", "gray", "grey", "beige", "ivory", "cream", "tan"]):
+            return "neutral"
+        elif any(word in color_lower for word in ["red", "orange", "yellow", "brown"]):
+            return "warm"
+        elif any(word in color_lower for word in ["blue", "green", "purple", "violet", "teal"]):
+            return "cool"
+        elif any(word in color_lower for word in ["pink", "red", "blue", "yellow", "green"]):
+            return "primary"
+        else:
+            return "neutral"
+
+    def extract_price(self, price_str: str) -> float:
+        """Extract numeric price from string."""
+        import re
+
+        match = re.search(r"[\d,]+\.?\d*", price_str.replace(",", ""))
+        return float(match.group()) if match else 0.0
+
+
+class ProductExtractor:
+    """Utility class for extracting product data."""
+
+    @staticmethod
+    def categorize_product(
+        name: str, description: str = "", category_hint: str = ""
+    ) -> str:
+        """Categorize product using Google taxonomy."""
+        name_lower = (name + " " + description).lower()
+
+        # Simplified categorization (can be extended)
+        if any(word in name_lower for word in ["shirt", "blouse", "top", "t-shirt", "sweater", "hoodie", "jacket", "coat"]):
+            return "Tops"
+        elif any(word in name_lower for word in ["pants", "jeans", "shorts", "skirt", "leggings", "trousers"]):
+            return "Bottoms"
+        elif any(word in name_lower for word in ["shoe", "sneaker", "boot", "sandal", "heel", "flat"]):
+            return "Shoes"
+        elif any(word in name_lower for word in ["bag", "watch", "necklace", "earring", "ring", "bracelet", "scarf", "hat", "belt"]):
+            return "Accessories"
+        else:
+            return category_hint or "Tops"
+
+    @staticmethod
+    def extract_vibes(name: str, description: str = "", price: float = 0) -> List[str]:
+        """Extract vibe tags from product data."""
+        tags = []
+        full_text = (name + " " + description).lower()
+
+        # Occasion tags
+        if any(word in full_text for word in ["casual", "everyday"]):
+            tags.append("casual")
+        if any(word in full_text for word in ["formal", "dress", "elegant"]):
+            tags.append("elegant")
+        if any(word in full_text for word in ["party", "night", "club"]):
+            tags.append("party")
+        if any(word in full_text for word in ["date", "romantic"]):
+            tags.append("date night")
+
+        # Style tags
+        if any(word in full_text for word in ["90s", "retro", "vintage"]):
+            tags.append("90s")
+        if any(word in full_text for word in ["minimalist", "simple"]):
+            tags.append("minimalist")
+        if any(word in full_text for word in ["sporty", "athletic", "gym"]):
+            tags.append("sporty")
+        if any(word in full_text for word in ["grunge", "dark"]):
+            tags.append("grunge")
+
+        return list(set(tags))  # Remove duplicates

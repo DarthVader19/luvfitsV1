@@ -1,124 +1,368 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+"""
+Luvfits Backend API - Async FastAPI application
+Provides RESTful endpoints for vibe-based outfit search and management
+"""
 import logging
-from database.models import init_db
-from logic.outfit_matcher import OutfitMatcher
-from scrapers.scraper_manager import ScraperManager
+from contextlib import asynccontextmanager
+from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
+
+from database.db import mongodb_client
+from database.models import (
+    SearchRequest,
+    RefreshResponse,
+)
+from logic.embedding_search import embedding_service
+from logic.outfit_builder import outfit_matcher
+from scripts.refresh_worker import (
+    refresh_worker,
+    start_refresh_worker,
+    stop_refresh_worker,
+)
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="Luvfits API", version="2.0")
 
-# Enable CORS for frontend
+# Lifespan context manager for startup/shutdown
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage app lifecycle: startup and shutdown."""
+    # Startup
+    logger.info("Starting Luvfits API...")
+    await mongodb_client.connect()
+    start_refresh_worker()
+    logger.info("API started successfully")
+
+    yield
+
+    # Shutdown
+    logger.info("Shutting down Luvfits API...")
+    stop_refresh_worker()
+    await mongodb_client.disconnect()
+    logger.info("API shutdown complete")
+
+
+# Create FastAPI app
+app = FastAPI(
+    title="Luvfits API",
+    version="3.0",
+    description="Vibe-based outfit recommendation engine",
+    lifespan=lifespan,
+)
+
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:5173", "http://localhost:3000", "*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.on_event("startup")
-async def startup_event():
-    """Initialize database on startup"""
-    init_db()
-    logger.info("Database initialized")
 
-@app.get("/")
-def read_root():
-    """Health check endpoint"""
+# ============================================================================
+# Health & Status Endpoints
+# ============================================================================
+
+
+@app.get("/", tags=["Health"])
+async def root():
+    """Root health check endpoint."""
     return {
-        "message": "Luvfits Backend API v2.0",
-        "status": "running"
+        "message": "Luvfits Backend API v3.0",
+        "status": "running",
+        "version": "3.0",
     }
 
-@app.get("/health")
-def health_check():
-    """Health status endpoint"""
-    return {"status": "healthy"}
 
-@app.get("/outfits")
-def get_outfits(query: str = "casual"):
+@app.get("/health", tags=["Health"])
+async def health_check():
+    """Detailed health status."""
+    try:
+        stats = await mongodb_client.get_stats()
+        return {
+            "status": "healthy",
+            "database": "connected",
+            "products": stats.get("total_products", 0),
+            "outfits": stats.get("total_outfits", 0),
+        }
+    except Exception as e:
+        logger.error(f"Health check failed: {e}")
+        raise HTTPException(status_code=503, detail="Database connection failed")
+
+
+# ============================================================================
+# Search Endpoints
+# ============================================================================
+
+
+@app.post("/search", tags=["Search"])
+async def search_outfits(request: SearchRequest):
     """
-    Search for outfits based on vibe/query
+    Search for outfits by vibe query using semantic embeddings.
     
     Args:
-        query: Vibe to search for (e.g., "Date Night", "casual", "90s")
+        request: SearchRequest with query and optional parameters
+        
+    Returns:
+        List of matching outfits
+    """
+    try:
+        logger.info(f"Search query: {request.query}")
+
+        # Get outfits matching the vibe
+        all_outfits = await mongodb_client.get_all_outfits(limit=request.limit)
+
+        # Filter by vibe if specified
+        if request.include_vibes:
+            # Simple vibe-based filtering
+            filtered = [
+                o for o in all_outfits
+                if any(
+                    vibe.lower() in request.query.lower()
+                    or request.query.lower() in vibe.lower()
+                    for vibe in o.vibes
+                )
+            ]
+            results = filtered[:request.limit]
+        else:
+            results = all_outfits[:request.limit]
+
+        return {
+            "status": "success",
+            "query": request.query,
+            "results": results,
+            "count": len(results),
+        }
+
+    except Exception as e:
+        logger.error(f"Search error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/search/products", tags=["Search"])
+async def search_products(
+    query: str = Query(..., description="Product search query"),
+    limit: int = Query(10, ge=1, le=50, description="Max results"),
+    category: str = Query(None, description="Filter by category"),
+):
+    """
+    Search products by keyword and optional category.
+    
+    Args:
+        query: Search term
+        limit: Max results
+        category: Optional category filter
+        
+    Returns:
+        List of matching products
+    """
+    try:
+        # Get products
+        all_products = await mongodb_client.get_all_products(limit=limit * 2)
+
+        # Filter by query
+        query_lower = query.lower()
+        filtered = [
+            p for p in all_products
+            if query_lower in p.name.lower()
+            or query_lower in p.description.lower()
+        ]
+
+        # Filter by category if specified
+        if category:
+            filtered = [p for p in filtered if p.category == category]
+
+        return {
+            "status": "success",
+            "query": query,
+            "category": category,
+            "results": filtered[:limit],
+            "count": len(filtered[:limit]),
+        }
+
+    except Exception as e:
+        logger.error(f"Product search error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ============================================================================
+# Outfit Endpoints
+# ============================================================================
+
+
+@app.get("/outfits", tags=["Outfits"])
+async def get_outfits(
+    vibe: str = Query(None, description="Filter by vibe"),
+    limit: int = Query(10, ge=1, le=50),
+):
+    """
+    Get all outfits, optionally filtered by vibe.
+    
+    Args:
+        vibe: Optional vibe to filter by
+        limit: Max results
+        
+    Returns:
+        List of outfits
+    """
+    try:
+        if vibe:
+            outfits = await mongodb_client.get_outfits_by_vibe(
+                vibe.lower(), limit
+            )
+        else:
+            outfits = await mongodb_client.get_all_outfits(limit=limit)
+
+        return {
+            "status": "success",
+            "vibe": vibe,
+            "outfits": outfits,
+            "count": len(outfits),
+        }
+
+    except Exception as e:
+        logger.error(f"Error fetching outfits: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/outfits/{outfit_id}", tags=["Outfits"])
+async def get_outfit_detail(outfit_id: str):
+    """Get detailed outfit information."""
+    try:
+        # Get outfit
+        all_outfits = await mongodb_client.get_all_outfits(limit=1000)
+        outfit = next((o for o in all_outfits if o.id == outfit_id), None)
+
+        if not outfit:
+            raise HTTPException(status_code=404, detail="Outfit not found")
+
+        # Get component products
+        top = await mongodb_client.get_product(outfit.top_id)
+        bottom = await mongodb_client.get_product(outfit.bottom_id)
+        shoes = await mongodb_client.get_product(outfit.shoe_id)
+        accessory = await mongodb_client.get_product(outfit.accessory_id)
+
+        return {
+            "status": "success",
+            "outfit": outfit,
+            "products": {
+                "top": top,
+                "bottom": bottom,
+                "shoes": shoes,
+                "accessory": accessory,
+            },
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error fetching outfit detail: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ============================================================================
+# Data Management Endpoints
+# ============================================================================
+
+
+@app.post("/refresh", tags=["Data Management"])
+async def trigger_refresh():
+    """
+    Trigger on-demand data refresh: scrape, embed, and generate outfits.
     
     Returns:
-        Outfit with top, bottom, accessory, shoe and compatibility score
+        Refresh status and results
     """
     try:
-        matcher = OutfitMatcher()
-        outfit = matcher.search_outfits(query)
-        matcher.close()
-        return {
-            "success": True,
-            "query": query,
-            "outfit": outfit
-        }
+        logger.info("On-demand refresh triggered via API")
+
+        # Use the refresh worker
+        await mongodb_client.connect()
+
+        try:
+            from scrapers.scraper_manager import ScraperManager
+
+            manager = ScraperManager()
+            results = await manager.refresh_all_data()
+
+            # Generate outfits
+            outfits = await outfit_matcher.create_outfits(num_outfits=50)
+            await outfit_matcher.save_outfits(outfits)
+
+            stats = await mongodb_client.get_stats()
+
+            return RefreshResponse(
+                status="success",
+                message="Data refresh completed successfully",
+                products_total=stats.get("total_products", 0),
+                outfits_generated=len(outfits),
+            )
+
+        finally:
+            await mongodb_client.disconnect()
+
     except Exception as e:
-        logger.error(f"Error searching outfits: {str(e)}")
+        logger.error(f"Refresh error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/stats", tags=["Data Management"])
+async def get_statistics():
+    """
+    Get database statistics.
+    
+    Returns:
+        Stats on products, categories, sites, and outfits
+    """
+    try:
+        stats = await mongodb_client.get_stats()
+
         return {
-            "success": False,
-            "error": str(e)
+            "status": "success",
+            "statistics": {
+                "total_products": stats.get("total_products", 0),
+                "total_outfits": await mongodb_client.count_outfits(),
+                "by_category": stats.get("categories", {}),
+                "by_site": stats.get("sites", {}),
+            },
         }
 
-@app.post("/refresh")
-def refresh_data():
-    """
-    Trigger complete data refresh from all sources
-    This will scrape H&M, Amazon, and Nordstrom
-    """
-    try:
-        manager = ScraperManager()
-        results = manager.refresh_all_data()
-        return {
-            "success": True,
-            "message": "Data refresh completed",
-            "results": results
-        }
     except Exception as e:
-        logger.error(f"Error during refresh: {str(e)}")
-        return {
-            "success": False,
-            "error": str(e)
-        }
+        logger.error(f"Stats error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/stats")
-def get_statistics():
-    """Get database statistics"""
-    try:
-        from database.models import SessionLocal, Product
-        session = SessionLocal()
-        
-        stats = {
-            "total_products": session.query(Product).count(),
-            "by_category": {},
-            "by_site": {},
-            "by_color_family": {}
-        }
-        
-        # Group by category
-        for category in ["Tops", "Bottoms", "Accessories", "Shoes"]:
-            count = session.query(Product).filter(Product.category == category).count()
-            stats["by_category"][category] = count
-        
-        # Group by site
-        for site in ["H&M", "Amazon", "Nordstrom"]:
-            count = session.query(Product).filter(Product.site == site).count()
-            stats["by_site"][site] = count
-        
-        # Group by color family
-        color_families = session.query(Product.color_family).distinct().all()
-        for (color_family,) in color_families:
-            count = session.query(Product).filter(Product.color_family == color_family).count()
-            stats["by_color_family"][color_family] = count
-        
-        session.close()
-        return {"success": True, "statistics": stats}
-    except Exception as e:
-        logger.error(f"Error fetching stats: {str(e)}")
-        return {"success": False, "error": str(e)}
+
+@app.get("/worker/status", tags=["Data Management"])
+def get_worker_status():
+    """Get background refresh worker status."""
+    return refresh_worker.get_status()
+
+
+# ============================================================================
+# Error Handlers
+# ============================================================================
+
+
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request, exc):
+    """Handle HTTP exceptions."""
+    return {
+        "status": "error",
+        "detail": exc.detail,
+        "status_code": exc.status_code,
+    }
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(
+        "main:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True,
+        log_level="info",
+    )
