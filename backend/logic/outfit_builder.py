@@ -4,14 +4,20 @@ Uses color harmony, vibe matching, and price balance scoring.
 """
 import logging
 from typing import List, Dict, Any, Tuple, Optional
+
+import sys 
+import os
+path_to_backend = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, path_to_backend)
+
 from database.db import mongodb_client
 from database.models import Product, Outfit
 
 logger = logging.getLogger(__name__)
 
 
-class OutfitMatcher:
-    """Matches products into coherent, balanced outfits."""
+class OutfitBuilder:
+    """Builds/generates coherent, balanced outfit combinations from products."""
 
     # Color harmony rules
     COLOR_HARMONY = {
@@ -40,6 +46,7 @@ class OutfitMatcher:
     async def create_outfits(self, num_outfits: int = 100) -> List[Outfit]:
         """
         Generate outfit combinations from available products.
+        Fills gaps with fallback products if needed.
         
         Args:
             num_outfits: Number of outfits to generate
@@ -48,23 +55,55 @@ class OutfitMatcher:
             List of generated Outfit objects
         """
         logger.info(f"Generating {num_outfits} outfits...")
+        
+        # Ensure MongoDB is connected
+        if mongodb_client.db is None:
+            await mongodb_client.connect()
 
-        # Get products by category
+        # Get products by category (real products first)
         tops = await mongodb_client.get_products_by_category("Tops", limit=100)
-        bottoms = await mongodb_client.get_products_by_category(
-            "Bottoms", limit=100
-        )
+        bottoms = await mongodb_client.get_products_by_category("Bottoms", limit=100)
         shoes = await mongodb_client.get_products_by_category("Shoes", limit=100)
-        accessories = await mongodb_client.get_products_by_category(
-            "Accessories", limit=100
-        )
+        accessories = await mongodb_client.get_products_by_category("Accessories", limit=100)
+
+        logger.info(f"Real products - Tops: {len(tops)}, Bottoms: {len(bottoms)}, Shoes: {len(shoes)}, Accessories: {len(accessories)}")
+
+        # If missing any category entirely, try to fill with fallback products
+        if not bottoms:
+            logger.warning("No Bottoms found, attempting to use fallback products...")
+            all_fallback = await mongodb_client.get_all_fallback_products(limit=500)
+            bottoms = [p for p in all_fallback if p.category == "Bottoms"][:100]
+            logger.info(f"Filled Bottoms with {len(bottoms)} fallback products")
+        
+        if not accessories:
+            logger.warning("No Accessories found, attempting to use fallback products...")
+            all_fallback = await mongodb_client.get_all_fallback_products(limit=500)
+            accessories = [p for p in all_fallback if p.category == "Accessories"][:100]
+            logger.info(f"Filled Accessories with {len(accessories)} fallback products")
+        
+        if not shoes or len(shoes) == 0:
+            logger.warning("No Shoes found, attempting to use fallback products...")
+            all_fallback = await mongodb_client.get_all_fallback_products(limit=500)
+            shoes_fallback = [p for p in all_fallback if p.category == "Shoes"][:100]
+            if shoes_fallback:
+                shoes = shoes_fallback
+            logger.info(f"Filled/supplemented Shoes with {len(shoes)} products (fallback)")
+        
+        if not tops or len(tops) == 0:
+            logger.warning("No Tops found, attempting to use fallback products...")
+            all_fallback = await mongodb_client.get_all_fallback_products(limit=500)
+            tops_fallback = [p for p in all_fallback if p.category == "Tops"][:100]
+            if tops_fallback:
+                tops = tops_fallback
+            logger.info(f"Filled/supplemented Tops with {len(tops)} products (fallback)")
 
         if not all([tops, bottoms, shoes, accessories]):
-            logger.warning("Not all categories have products available")
+            logger.error(f"Still missing categories after fallback attempt. Tops: {len(tops)}, Bottoms: {len(bottoms)}, Shoes: {len(shoes)}, Accessories: {len(accessories)}")
             return []
 
         outfits = []
         generated = 0
+        skipped = 0
 
         # Generate outfits with balanced selection
         for top in tops:
@@ -79,7 +118,7 @@ class OutfitMatcher:
                             top, bottom, shoe, accessory
                         )
 
-                        if score["compatibility"] > 0.5:  # Only include decent outfits
+                        if score["compatibility"] > 0.3:  # Lowered threshold to ensure outfit generation
                             # Extract shared vibes
                             vibes = self._extract_shared_vibes(
                                 [top, bottom, shoe, accessory]
@@ -103,6 +142,8 @@ class OutfitMatcher:
 
                             outfits.append(outfit)
                             generated += 1
+                        else:
+                            skipped += 1
 
                     if generated >= num_outfits:
                         break
@@ -111,8 +152,9 @@ class OutfitMatcher:
             if generated >= num_outfits:
                 break
 
-        logger.info(f"Generated {len(outfits)} valid outfits")
+        logger.info(f"Generated {len(outfits)} valid outfits (skipped {skipped} low-score combinations)")
         return outfits
+        # Note: Connection is kept open for save_outfits
 
     def _score_outfit(
         self, top: Product, bottom: Product, shoe: Product, accessory: Product
@@ -228,17 +270,45 @@ class OutfitMatcher:
 
     async def save_outfits(self, outfits: List[Outfit]) -> int:
         """Save outfits to MongoDB."""
+        logger.info(f"Saving {len(outfits)} outfits to MongoDB...")
+        
+        # Ensure MongoDB is connected
+        if mongodb_client.db is None:
+            await mongodb_client.connect()
+        
         saved = 0
-        for outfit in outfits:
+        failed = 0
+        
+        for i, outfit in enumerate(outfits):
             try:
-                await mongodb_client.add_outfit(outfit)
+                # Verify outfit has valid IDs
+                if not all([outfit.top_id, outfit.bottom_id, outfit.shoe_id, outfit.accessory_id]):
+                    logger.warning(f"Outfit {i} missing product IDs, skipping")
+                    failed += 1
+                    continue
+                    
+                outfit_id = await mongodb_client.add_outfit(outfit)
+                logger.debug(f"Saved outfit {i+1}/{len(outfits)} with ID: {outfit_id}")
                 saved += 1
             except Exception as e:
-                logger.warning(f"Error saving outfit: {e}")
+                logger.error(f"Error saving outfit {i}: {e}", exc_info=True)
+                failed += 1
 
-        logger.info(f"Saved {saved}/{len(outfits)} outfits")
+        logger.info(f"Successfully saved {saved}/{len(outfits)} outfits ({failed} failures)")
         return saved
 
 
 # Global instance
-outfit_matcher = OutfitMatcher()
+#create outfits and save to DB when this file runs
+if __name__ == "__main__":
+    outfit_builder = OutfitBuilder()
+    import asyncio
+    async def generate_and_save():
+        outfits = await outfit_builder.create_outfits(num_outfits=50)
+        logger.info(f"Generated {len(outfits)} outfits, now saving...")
+        if outfits:
+            await outfit_builder.save_outfits(outfits)
+            logger.info("Outfits saved successfully.")
+    asyncio.run(generate_and_save())
+
+outfit_builder = OutfitBuilder()

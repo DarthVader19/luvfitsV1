@@ -85,7 +85,7 @@ class HMScraper(BaseScraper):
                     logger.info(f"Scraping H&M {category} from {url}")
                     html = await self.scrape_page(url, render_js=True)
                     if html:
-                        products.extend(self._extract_products(html, category))
+                        products.extend(await self._extract_products(html, category))
 
                     category_count = len(
                         [p for p in products if p.get("category") == category]
@@ -96,7 +96,7 @@ class HMScraper(BaseScraper):
         logger.info(f"H&M: Scraped {len(products)} total products")
         return products
 
-    def _extract_products(self, html: str, category: str) -> List[Dict[str, Any]]:
+    async def _extract_products(self, html: str, category: str) -> List[Dict[str, Any]]:
         """Extract products from H&M HTML."""
         products: List[Dict[str, Any]] = []
         soup = self.parse_html(html)
@@ -117,16 +117,16 @@ class HMScraper(BaseScraper):
                 break
 
         if not items:
-            return self._extract_from_links(soup, category)
+            return await self._extract_from_links(soup, category)
 
         for item in items[:25]:
-            product = self._parse_item(item, category)
+            product = await self._parse_item(item, category)
             if product:
                 products.append(product)
 
         return products
 
-    def _extract_from_links(self, soup, category: str) -> List[Dict[str, Any]]:
+    async def _extract_from_links(self, soup, category: str) -> List[Dict[str, Any]]:
         """Fallback extraction from product links when card selectors fail."""
         products: List[Dict[str, Any]] = []
         links = soup.select("a[href*='/productpage.']")
@@ -145,7 +145,7 @@ class HMScraper(BaseScraper):
             description = name
             price = 0.0
             color = "Unknown"
-
+            tags = await ProductExtractor.extract_vibes(name, description, price)
             products.append(
                 {
                     "name": name,
@@ -159,7 +159,7 @@ class HMScraper(BaseScraper):
                     "category": category,
                     "subcategory": None,
                     "site": self.site_name,
-                    "tags": ProductExtractor.extract_vibes(name, description, price),
+                    "tags":tags,
                     "style_score": 0.7,
                     "available": True,
                 }
@@ -167,7 +167,7 @@ class HMScraper(BaseScraper):
 
         return products[:25]
 
-    def _parse_item(self, item, category: str) -> Dict[str, Any] | None:
+    async def _parse_item(self, item, category: str) -> Dict[str, Any] | None:
         """Parse one product card."""
         try:
             name_elem = item.select_one("a[href*='/productpage.'], a.link, a.item-link")
@@ -206,7 +206,7 @@ class HMScraper(BaseScraper):
             )
             if color_match:
                 color = color_match.group(1).capitalize()
-
+            tags = await ProductExtractor.extract_vibes(name, description, price)
             return {
                 "name": name,
                 "price": price,
@@ -219,7 +219,7 @@ class HMScraper(BaseScraper):
                 "category": category,
                 "subcategory": None,
                 "site": self.site_name,
-                "tags": ProductExtractor.extract_vibes(name, description, price),
+                "tags": tags,
                 "style_score": 0.7,
                 "available": True,
             }

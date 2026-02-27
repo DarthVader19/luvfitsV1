@@ -13,37 +13,48 @@
 }
 
 .available-header h2 {
-  color: #fff;
+  color: var(--text, #10233f);
   margin: 0;
 }
 
-.refresh-button,
-.open-button {
+.available-outfits .refresh-button,
+.available-outfits .open-button {
   border: 0;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px 14px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.refresh-button {
-  background: #3f61d7;
-  color: #fff;
+.available-outfits .refresh-button {
+  background: linear-gradient(120deg, var(--brand-3, #0891b2) 0%, var(--brand-2, #2563eb) 100%);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
 }
 
-.open-button {
-  background: #6f49a2;
-  color: #fff;
+.available-outfits .open-button {
+  background: linear-gradient(120deg, var(--brand, #0e7490) 0%, var(--brand-2, #2563eb) 100%);
   width: 100%;
+  box-shadow: 0 8px 18px rgba(14, 116, 144, 0.24);
+}
+
+.available-outfits .refresh-button:hover:not(:disabled),
+.available-outfits .open-button:hover:not(:disabled) {
+  transform: translateY(-1px);
 }
 
 .available-error {
-  color: #ff8c8c;
+  color: #a22323;
+  background: #fff2f2;
+  border: 1px solid #f2b8b8;
+  padding: 10px 12px;
+  border-radius: 10px;
   margin-bottom: 12px;
 }
 
 .available-empty {
-  color: #ddd;
+  color: var(--text-muted, #4f6280);
 }
 
 .available-grid {
@@ -53,24 +64,47 @@
 }
 
 .available-card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.93);
+  border: 1px solid var(--border, #d5e0ef);
+  border-radius: 14px;
   padding: 16px;
+  box-shadow: 0 8px 22px rgba(16, 35, 63, 0.1);
 }
 
 .available-title {
   margin: 0 0 8px;
+  color: var(--text, #10233f);
 }
 
 .available-meta {
   margin: 0 0 8px;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--brand, #0e7490);
 }
 
 .available-vibes {
   margin: 0 0 12px;
-  color: #444;
+  color: var(--text-muted, #4f6280);
   min-height: 40px;
+}
+
+.available-price {
+  margin: 0 0 12px;
+  color: var(--brand-2, #2563eb);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.item-link {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--brand, #0e7490) 0%, var(--brand-2, #2563eb) 100%);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
 }
 
 @media (max-width: 600px) {
@@ -78,4 +112,10 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .available-outfits .refresh-button {
+    width: 100%;
+  }
 }
+
+

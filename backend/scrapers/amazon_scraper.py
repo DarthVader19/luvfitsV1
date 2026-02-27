@@ -45,7 +45,7 @@ class AmazonScraper(BaseScraper):
         logger.info(f"Amazon: Scraped {len(products)} total products")
         return products
 
-    def _extract_products(self, html: str, category: str) -> List[Dict[str, Any]]:
+    async def _extract_products(self, html: str, category: str) -> List[Dict[str, Any]]:
         """Extract products from Amazon HTML."""
         products = []
         soup = self.parse_html(html)
@@ -96,7 +96,7 @@ class AmazonScraper(BaseScraper):
 
                 if name and product_url:
                     color_family = self.extract_color_family(color)
-                    vibes = ProductExtractor.extract_vibes(name, description, price)
+                    vibes = await ProductExtractor.extract_vibes(name, description, price)
 
                     product = {
                         "name": name,
