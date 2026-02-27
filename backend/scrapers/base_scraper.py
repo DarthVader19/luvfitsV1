@@ -4,10 +4,17 @@ Base scraper class using Scrape.do API for all sites.
 import asyncio
 import logging
 import os
+from pathlib import Path
 from typing import List, Dict, Any
 from abc import ABC, abstractmethod
 import aiohttp
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
+
+# Load backend/.env and project-root/.env if present.
+_BACKEND_DIR = Path(__file__).resolve().parents[1]
+load_dotenv(_BACKEND_DIR / ".env")
+load_dotenv(_BACKEND_DIR.parent / ".env")
 
 logger = logging.getLogger(__name__)
 
@@ -44,22 +51,16 @@ class BaseScraper(ABC):
             HTML content of the page
         """
         try:
-            params = {
-                "url": url,
-                "render": "true" if render_js else "false",
-                "timeout": "30000",
-            }
-
-            if self.api_key:
-                params["token"] = self.api_key
-
-            # Using proxy-style request
-            scrape_url = f"{self.SCRAPE_DO_URL}?url={url}"
-            if render_js:
-                scrape_url += "&render=true"
-
             async with self.session.get(
-                scrape_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30
+                self.SCRAPE_DO_URL,
+                params={
+                    "url": url,
+                    "render": "true" if render_js else "false",
+                    "timeout": "30000",
+                    **({"token": self.api_key} if self.api_key else {}),
+                },
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=30,
             ) as response:
                 if response.status == 200:
                     return await response.text()

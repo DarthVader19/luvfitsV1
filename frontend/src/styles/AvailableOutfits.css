@@ -1,0 +1,81 @@
+.available-outfits {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 20px;
+}
+
+.available-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.available-header h2 {
+  color: #fff;
+  margin: 0;
+}
+
+.refresh-button,
+.open-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.refresh-button {
+  background: #3f61d7;
+  color: #fff;
+}
+
+.open-button {
+  background: #6f49a2;
+  color: #fff;
+  width: 100%;
+}
+
+.available-error {
+  color: #ff8c8c;
+  margin-bottom: 12px;
+}
+
+.available-empty {
+  color: #ddd;
+}
+
+.available-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.available-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.available-title {
+  margin: 0 0 8px;
+}
+
+.available-meta {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.available-vibes {
+  margin: 0 0 12px;
+  color: #444;
+  min-height: 40px;
+}
+
+@media (max-width: 600px) {
+  .available-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

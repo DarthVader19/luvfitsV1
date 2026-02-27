@@ -129,10 +129,3 @@ class NordstromScraper(BaseScraper):
                 continue
 
         return products
-        
-        return products
-    
-    def scrape(self, category: str, num_products: int = 25) -> list:
-        """Override to set current category for extraction"""
-        self.current_category = category
-        return super().scrape(category, num_products)

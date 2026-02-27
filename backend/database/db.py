@@ -2,14 +2,21 @@
 MongoDB connection and operations handler.
 """
 import os
+from pathlib import Path
 from typing import List, Optional, Dict, Any
 from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo import ASCENDING, DESCENDING
 from pymongo.errors import DuplicateKeyError
+from dotenv import load_dotenv
 from .models import Product, Outfit, ScrapingJob
 import logging
 
 logger = logging.getLogger(__name__)
+
+# Load backend/.env and project-root/.env if present.
+_BACKEND_DIR = Path(__file__).resolve().parents[1]
+load_dotenv(_BACKEND_DIR / ".env")
+load_dotenv(_BACKEND_DIR.parent / ".env")
 
 
 class MongoDBClient:
@@ -21,7 +28,7 @@ class MongoDBClient:
         )
         self.client: Optional[AsyncIOMotorClient] = None
         self.db: Optional[Any] = None
-
+        
     async def connect(self):
         """Connect to MongoDB."""
         try:
@@ -43,7 +50,7 @@ class MongoDBClient:
 
     async def _create_indexes(self):
         """Create necessary indexes for performance."""
-        if not self.db:
+        if  self.db is None:
             return
 
         # Products collection indexes

@@ -114,7 +114,7 @@ async def search_outfits(request: SearchRequest):
 
         # Get outfits matching the vibe
         all_outfits = await mongodb_client.get_all_outfits(limit=request.limit)
-
+        print(all_outfits)
         # Filter by vibe if specified
         if request.include_vibes:
             # Simple vibe-based filtering
@@ -127,6 +127,7 @@ async def search_outfits(request: SearchRequest):
                 )
             ]
             results = filtered[:request.limit]
+            print(results)
         else:
             results = all_outfits[:request.limit]
 
@@ -213,9 +214,10 @@ async def get_outfits(
             outfits = await mongodb_client.get_outfits_by_vibe(
                 vibe.lower(), limit
             )
+            print(outfits)
         else:
             outfits = await mongodb_client.get_all_outfits(limit=limit)
-
+            
         return {
             "status": "success",
             "vibe": vibe,

@@ -105,7 +105,7 @@ class RefreshWorker:
         finally:
             await mongodb_client.disconnect()
 
-    async def on_demand_refresh(self) -> Dict:
+    async def on_demand_refresh(self) -> dict:
         """
         Execute refresh on-demand (e.g., from API endpoint).
         
@@ -156,7 +156,7 @@ class RefreshWorker:
         finally:
             await mongodb_client.disconnect()
 
-    def get_status(self) -> Dict:
+    def get_status(self) -> dict:
         """Get scheduler status."""
         return {
             "running": self.scheduler.running,
