@@ -73,6 +73,7 @@ async def refresh_tags():
     logger.info(f"  ✗ Failed: {failed_count}")
     logger.info(f"  ⚠ No tags: {no_tags_count}")
 
+#run refresh tags for all outfits as well to update vibe field
 
 if __name__ == "__main__":
     asyncio.run(refresh_tags())

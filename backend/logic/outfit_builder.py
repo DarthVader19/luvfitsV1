@@ -263,7 +263,7 @@ class OutfitBuilder:
 
         # Return vibes that appear in 2+ pieces
         shared_vibes = [
-            vibe for vibe, count in vibe_counts.items() if count >= 2
+            vibe for vibe, count in vibe_counts.items() if count >= 1
         ]
 
         return shared_vibes if shared_vibes else ["neutral"]
