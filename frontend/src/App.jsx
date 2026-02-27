@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import OutfitDisplay from './components/OutfitDisplay';
 import AvailableOutfits from './components/AvailableOutfits';
+import Products from './components/Products';
 import './App.css';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
@@ -10,6 +11,7 @@ function App() {
   const [page, setPage] = useState('search');
   const [outfit, setOutfit] = useState(null);
   const [availableOutfits, setAvailableOutfits] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [stats, setStats] = useState(null);
@@ -78,10 +80,32 @@ function App() {
         throw new Error(`Failed to fetch outfits (${response.status})`);
       }
       const data = await response.json();
+      console.log('Outfits API response:', data);
       if (data.status !== 'success') {
         throw new Error(data.detail || 'Failed to fetch available outfits');
       }
       setAvailableOutfits(data.outfits || []);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const loadProducts = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/products?limit=200`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch products (${response.status})`);
+      }
+      const data = await response.json();
+      console.log('Products API response:', data);
+      if (data.status !== 'success') {
+        throw new Error(data.detail || 'Failed to fetch products');
+      }
+      setProducts(data.results || []);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -134,6 +158,8 @@ function App() {
   useEffect(() => {
     if (page === 'available') {
       loadAvailableOutfits();
+    } else if (page === 'products') {
+      loadProducts();
     }
   }, [page]);
 
@@ -160,14 +186,25 @@ function App() {
           >
             Available Outfits
           </button>
+          <button
+            className={`page-tab ${page === 'products' ? 'active' : ''}`}
+            onClick={() => setPage('products')}
+          >
+            All Products
+          </button>
         </div>
 
         {page === 'search' ? (
           <>
             <SearchBar onSearch={handleSearch} loading={loading} />
-            <OutfitDisplay outfit={outfit} loading={loading} error={error} />
+            <div className="search-content">
+              <OutfitDisplay outfit={outfit} loading={loading} error={error} />
+              {outfit && (
+                <Products products={products} loading={false} error={null} onRefresh={loadProducts} />
+              )}
+            </div>
           </>
-        ) : (
+        ) : page === 'available' ? (
           <AvailableOutfits
             outfits={availableOutfits}
             loading={loading}
@@ -175,6 +212,8 @@ function App() {
             onOpenOutfit={handleOpenOutfit}
             onRefresh={loadAvailableOutfits}
           />
+        ) : (
+          <Products products={products} loading={loading} error={error} onRefresh={loadProducts} />
         )}
       </main>
 

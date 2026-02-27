@@ -6,7 +6,6 @@ import os
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from scrapers.scraper_manager import ScraperManager
 
 logging.basicConfig(level=logging.INFO)
@@ -24,7 +23,7 @@ def refresh():
     logger.info("Starting scheduled data refresh...")
     try:
         results = asyncio.run(_refresh_async())
-        logger.info(f"Refresh completed. Total products: {results.get('total_products', 0)}")
+        logger.info(f"Refresh completed. Total products: {results.get('total_products', 0)}, Outfits: {results.get('outfits_generated', 0)}")
         return results
     except Exception as e:
         logger.error(f"Error during refresh: {str(e)}", exc_info=True)
@@ -40,8 +39,12 @@ def schedule_refresh(interval_hours: int = 24):
         refresh()
         time.sleep(interval_seconds)
 
+
+
 if __name__ == "__main__":
     # Run once on startup
-    refresh()
+    results = refresh()
+    if results:
+        print(f"Refresh complete. Outfits generated: {results.get('outfits_generated', 0)}")
     # Uncomment to schedule periodic refreshes
     # schedule_refresh(24)
