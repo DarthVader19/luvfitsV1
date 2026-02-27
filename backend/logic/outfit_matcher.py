@@ -5,8 +5,8 @@ import asyncio
 import logging
 from typing import List, Dict, Tuple, Optional
 
-
-from database.models import Product, SessionLocal
+from database.models import Product
+from database.db import mongodb_client
 from scrapers.base_scraper import VibeExtractor, ModelCache
 
 logger = logging.getLogger(__name__)
@@ -24,7 +24,7 @@ class OutfitMatcher:
     }
     
     def __init__(self):
-        self.session = SessionLocal()
+        pass
     
     async def extract_query_tags(self, query: str) -> List[str]:
         """
@@ -54,7 +54,7 @@ class OutfitMatcher:
             logger.error(f"Error extracting tags: {e}")
             return []
     
-    def get_products_by_tags(self, tags: List[str], limit: int = 20) -> Dict[str, List[Product]]:
+    async def get_products_by_tags(self, tags: List[str], limit: int = 20) -> Dict[str, List[Product]]:
         """
         Get products grouped by category that match the extracted tags.
         Uses MongoDB text search and tag filtering.
@@ -68,10 +68,7 @@ class OutfitMatcher:
         
         try:
             for category in products_by_category.keys():
-                all_category_products = self.session.query(Product).filter(
-                    Product.category == category,
-                    Product.available == True
-                ).all()
+                all_category_products = await mongodb_client.get_products_by_category(category, limit=100)
                 
                 # Score products by tag match
                 scored_products = []
@@ -234,15 +231,13 @@ class OutfitMatcher:
         
         return best_combo
     
-    def _build_fallback_outfit(self) -> Dict:
+    async def _build_fallback_outfit(self) -> Dict:
         """Build a random outfit if no good combination found"""
         try:
             outfit = {}
             for category in ['Tops', 'Bottoms', 'Accessories', 'Shoes']:
-                product = self.session.query(Product).filter(
-                    Product.category == category,
-                    Product.available == True
-                ).first()
+                products = await mongodb_client.get_products_by_category(category, limit=1)
+                product = products[0] if products else None
                 outfit[category.lower()] = product.model_dump() if product else None
             outfit['compatibility_score'] = 0.3
             return outfit
@@ -265,10 +260,10 @@ class OutfitMatcher:
             
             if not target_tags:
                 logger.info("No tags extracted, returning fallback outfit")
-                return self._build_fallback_outfit()
+                return await self._build_fallback_outfit()
             
             # Step 2: Get products matching those tags
-            products_by_category = self.get_products_by_tags(target_tags)
+            products_by_category = await self.get_products_by_tags(target_tags)
             
             # Step 3: Find best combination
             best_outfit = self.find_best_combination(products_by_category, target_tags)
@@ -289,16 +284,11 @@ class OutfitMatcher:
                 return outfit_response
             else:
                 logger.warning("No valid outfit combination found")
-                return self._build_fallback_outfit()
+                return await self._build_fallback_outfit()
         
         except Exception as e:
             logger.error(f"Error during outfit search: {e}", exc_info=True)
-            return self._build_fallback_outfit()
-    
-    def close(self):
-        """Close database session"""
-        if self.session:
-            self.session.close()
+            return await self._build_fallback_outfit()
 
 
 # Global instance for reuse
