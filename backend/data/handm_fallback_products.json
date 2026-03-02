@@ -1,1 +1,477 @@
-[]
+[
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=1",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=2",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=3",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=4",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=5",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=6",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=7",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=8",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=9",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=10",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=11",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=12",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=13",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=14",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=15",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=16",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=17",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=18",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=19",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=20",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=21",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=22",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=23",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
+    "currency": "USD",
+    "color": "Gold",
+    "color_family": "warm",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=24",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party",
+      "elegant"
+    ],
+    "style_score": 0.69,
+    "available": true
+  },
+  {
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=25",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  }
+]

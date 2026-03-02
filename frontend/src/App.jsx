@@ -75,7 +75,7 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${API_BASE_URL}/outfits?limit=50`);
+      const response = await fetch(`${API_BASE_URL}/outfits?limit=100`);
       if (!response.ok) {
         throw new Error(`Failed to fetch outfits (${response.status})`);
       }

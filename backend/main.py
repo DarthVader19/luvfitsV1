@@ -363,7 +363,7 @@ async def search_outfit_matcher(request: SearchRequest):
 @app.get("/outfits", tags=["Outfits"])
 async def get_outfits(
     vibe: str = Query(None, description="Filter by vibe"),
-    limit: int = Query(10, ge=1, le=50),
+    limit: int = Query(10, ge=1, le=200),
 ):
     """
     Get all outfits, optionally filtered by vibe.

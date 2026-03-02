@@ -2,11 +2,14 @@
 Base scraper class using Scrape.do API for all sites.
 """
 import asyncio
+import json
 import logging
 import os
 from pathlib import Path
 from typing import List, Dict, Any
 from abc import ABC, abstractmethod
+
+# from flask import json
 import aiohttp
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
@@ -40,7 +43,10 @@ class BaseScraper(ABC):
         if self.session:
             await self.session.close()
 
-    async def scrape_page(self, url: str, render_js: bool = True) -> str:
+    async def scrape_page(self, url: str, render_js: bool = True, headers: dict = {"User-Agent": "Mozilla/5.0",
+                         "Accept-Language": "en-US,en;q=0.9",
+                         "Accept-Encoding": "gzip, deflate, br",
+                         "Connection": "keep-alive"}) -> str:
         """
         Scrape a page using Scrape.do API.
 
@@ -58,9 +64,10 @@ class BaseScraper(ABC):
                     "render": "true" if render_js else "false",
                     "timeout": "30000",
                     **({"token": self.api_key} if self.api_key else {}),
+                    "custom_headers": json.dumps(headers)  # Pass custom headers to Scrape.do
                 },
-                headers={"User-Agent": "Mozilla/5.0"},
-                timeout=30,
+                headers=headers,
+                timeout=60,
             ) as response:
                 if response.status == 200:
                     return await response.text()
@@ -109,6 +116,7 @@ class BaseScraper(ABC):
         return float(match.group()) if match else 0.0
 
 
+
 class ProductExtractor:
     """Utility class for extracting product data."""
 
@@ -130,6 +138,8 @@ class ProductExtractor:
             return "Accessories"
         else:
             return category_hint or "Tops"
+    
+
 
     @staticmethod
     async def extract_vibes(name: str, description: str = "", price: float = 0) -> List[str]:

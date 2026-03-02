@@ -1,0 +1,110 @@
+{
+  "site": "H&M",
+  "categories": {
+    "Tops": {
+      "urls": [
+        "https://www2.hm.com/en_in/women/shop-by-product/tops.html"
+      ],
+      "url_results": [
+        {
+          "url": "https://www2.hm.com/en_in/women/shop-by-product/tops.html",
+          "ok": true,
+          "html_chars": 2621,
+          "selected_selector": null,
+          "selector_counts": {
+            "article[data-articlecode]": 0,
+            "div[data-articlecode]": 0,
+            "li.product-item": 0,
+            "div.product-item": 0,
+            "div.productitem": 0
+          },
+          "items_found": 0,
+          "parsed_products": 0,
+          "fallback_products": 0
+        }
+      ],
+      "products_parsed": 0,
+      "fallback_products": 0
+    },
+    "Bottoms": {
+      "urls": [
+        "https://www2.hm.com/en_in/women/shop-by-product/bottoms.html"
+      ],
+      "url_results": [
+        {
+          "url": "https://www2.hm.com/en_in/women/shop-by-product/bottoms.html",
+          "ok": true,
+          "html_chars": 2622,
+          "selected_selector": null,
+          "selector_counts": {
+            "article[data-articlecode]": 0,
+            "div[data-articlecode]": 0,
+            "li.product-item": 0,
+            "div.product-item": 0,
+            "div.productitem": 0
+          },
+          "items_found": 0,
+          "parsed_products": 0,
+          "fallback_products": 0
+        }
+      ],
+      "products_parsed": 0,
+      "fallback_products": 0
+    },
+    "Accessories": {
+      "urls": [
+        "https://www2.hm.com/en_in/women/shop-by-product/accessories.html"
+      ],
+      "url_results": [
+        {
+          "url": "https://www2.hm.com/en_in/women/shop-by-product/accessories.html",
+          "ok": true,
+          "html_chars": 2623,
+          "selected_selector": null,
+          "selector_counts": {
+            "article[data-articlecode]": 0,
+            "div[data-articlecode]": 0,
+            "li.product-item": 0,
+            "div.product-item": 0,
+            "div.productitem": 0
+          },
+          "items_found": 0,
+          "parsed_products": 0,
+          "fallback_products": 0
+        }
+      ],
+      "products_parsed": 0,
+      "fallback_products": 0
+    },
+    "Shoes": {
+      "urls": [
+        "https://www2.hm.com/en_in/women/shop-by-product/shoes.html"
+      ],
+      "url_results": [
+        {
+          "url": "https://www2.hm.com/en_in/women/shop-by-product/shoes.html",
+          "ok": true,
+          "html_chars": 2623,
+          "selected_selector": null,
+          "selector_counts": {
+            "article[data-articlecode]": 0,
+            "div[data-articlecode]": 0,
+            "li.product-item": 0,
+            "div.product-item": 0,
+            "div.productitem": 0
+          },
+          "items_found": 0,
+          "parsed_products": 0,
+          "fallback_products": 0
+        }
+      ],
+      "products_parsed": 0,
+      "fallback_products": 0
+    }
+  },
+  "totals": {
+    "urls_tested": 4,
+    "products_parsed": 0,
+    "fallback_products": 0
+  }
+}
