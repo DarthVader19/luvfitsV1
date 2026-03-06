@@ -113,29 +113,37 @@ async def search_outfits(request: SearchRequest):
     """
     try:
         logger.info(f"Search query: {request.query}")
-        query_lower = request.query.lower()
+        if not request.query or not request.query.strip():
+            raise HTTPException(status_code=400, detail="Query cannot be empty")
 
-        # Get all outfits from database
-        all_outfits = await mongodb_client.get_all_outfits(limit=500)
-        logger.info(f"Total outfits in database: {len(all_outfits)}")
-        
-        # Filter outfits by matching query with vibes
-        if request.include_vibes and request.query.strip():
-            # Match outfits where query matches any vibe
-            filtered = []
-            for outfit in all_outfits:
-                # Check if query matches any vibe tag in the outfit
-                matching_vibes = [
-                    vibe for vibe in outfit.vibes
-                    if query_lower in vibe.lower() or vibe.lower() in query_lower
-                ]
-                if matching_vibes:
-                    filtered.append(outfit)
-            
-            results = filtered[:request.limit]
-            logger.info(f"Found {len(results)} outfits matching '{request.query}'")
-        else:
-            results = all_outfits[:request.limit]
+        # Semantic outfit search using query embedding vs outfit embedding.
+        ranked_results = await embedding_service.search_outfits_by_query(
+            request.query, limit=request.limit
+        )
+        results = [item[0] for item in ranked_results]
+        scores_by_id = {
+            item[0].id: float(item[1])
+            for item in ranked_results
+            if item[0].id is not None
+        }
+
+        logger.info(
+            f"Found {len(results)} semantically ranked outfits for '{request.query}'"
+        )
+
+        if not results and request.include_vibes:
+            query_lower = request.query.lower()
+            all_outfits = await mongodb_client.get_all_outfits(limit=500)
+            results = [
+                outfit for outfit in all_outfits
+                if any(
+                    query_lower in vibe.lower() or vibe.lower() in query_lower
+                    for vibe in outfit.vibes
+                )
+            ][:request.limit]
+            logger.info(
+                f"Semantic search empty; fallback vibe matches: {len(results)}"
+            )
         
         # Serialize outfits properly
         serialized_results = [
@@ -147,6 +155,7 @@ async def search_outfits(request: SearchRequest):
                 "accessory_id": outfit.accessory_id,
                 "vibes": outfit.vibes,
                 "compatibility_score": outfit.compatibility_score,
+                "semantic_score": scores_by_id.get(outfit.id, 0.0),
                 "color_harmony": outfit.color_harmony,
                 "total_price": outfit.total_price,
                 "created_at": outfit.created_at.isoformat() if hasattr(outfit.created_at, 'isoformat') else str(outfit.created_at),
@@ -157,6 +166,7 @@ async def search_outfits(request: SearchRequest):
         return {
             "status": "success",
             "query": request.query,
+            "best_outfit": serialized_results[0] if serialized_results else None,
             "results": serialized_results,
             "count": len(serialized_results),
         }
