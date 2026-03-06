@@ -4,10 +4,17 @@ Base scraper class using Scrape.do API for all sites.
 import asyncio
 import logging
 import os
+from pathlib import Path
 from typing import List, Dict, Any
 from abc import ABC, abstractmethod
 import aiohttp
 from bs4 import BeautifulSoup
+from dotenv import load_dotenv
+
+# Load backend/.env and project-root/.env if present.
+_BACKEND_DIR = Path(__file__).resolve().parents[1]
+load_dotenv(_BACKEND_DIR / ".env")
+load_dotenv(_BACKEND_DIR.parent / ".env")
 
 logger = logging.getLogger(__name__)
 
@@ -44,22 +51,16 @@ class BaseScraper(ABC):
             HTML content of the page
         """
         try:
-            params = {
-                "url": url,
-                "render": "true" if render_js else "false",
-                "timeout": "30000",
-            }
-
-            if self.api_key:
-                params["token"] = self.api_key
-
-            # Using proxy-style request
-            scrape_url = f"{self.SCRAPE_DO_URL}?url={url}"
-            if render_js:
-                scrape_url += "&render=true"
-
             async with self.session.get(
-                scrape_url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30
+                self.SCRAPE_DO_URL,
+                params={
+                    "url": url,
+                    "render": "true" if render_js else "false",
+                    "timeout": "30000",
+                    **({"token": self.api_key} if self.api_key else {}),
+                },
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=30,
             ) as response:
                 if response.status == 200:
                     return await response.text()
@@ -131,7 +132,7 @@ class ProductExtractor:
             return category_hint or "Tops"
 
     @staticmethod
-    def extract_vibes(name: str, description: str = "", price: float = 0) -> List[str]:
+    async def extract_vibes(name: str, description: str = "", price: float = 0) -> List[str]:
         """Extract vibe tags from product data."""
         tags = []
         full_text = (name + " " + description).lower()
@@ -155,5 +156,160 @@ class ProductExtractor:
             tags.append("sporty")
         if any(word in full_text for word in ["grunge", "dark"]):
             tags.append("grunge")
+        
+        # Use AI extraction for more nuanced classification
+        try:
+            extractor = VibeExtractor()
+            ai_tags = await extractor.extract_vibes(
+                name=name,
+                description=description
+            )
+            tags.extend(ai_tags)
+            logger.debug(f"AI tags for '{name}': {ai_tags}")
+        except Exception as e:
+            logger.warning(f"AI vibe extraction failed for '{name}': {e}")
 
-        return list(set(tags))  # Remove duplicates
+        # Remove duplicates and return
+        unique_tags = list(set(tags))
+        if not unique_tags:
+            logger.warning(f"No vibe tags extracted (keyword or AI) for: {name}")
+        
+        return unique_tags
+
+from transformers import pipeline
+from typing import List
+import torch
+import os
+
+# Set Hugging Face cache directory to avoid repeated downloads
+if not os.getenv('HF_HOME'):
+    _hf_cache_dir = Path(__file__).resolve().parents[1] / ".cache" / "huggingface"
+    os.environ['HF_HOME'] = str(_hf_cache_dir)
+    os.environ['HF_HUB_CACHE'] = str(_hf_cache_dir)
+
+#save model so it doesn t have to be downloaded every time
+class ModelCache:
+    _instance = None
+    _lock = asyncio.Lock()
+    
+    def __init__(self):
+        self.classifier = None
+        self.model_name = "valhalla/distilbart-mnli-12-1"
+    
+    @classmethod
+    async def get_instance(cls):
+        """Get or create singleton instance with thread safety."""
+        if cls._instance is None:
+            async with cls._lock:
+                if cls._instance is None:
+                    cls._instance = ModelCache()
+                    await cls._instance._load_model()
+        return cls._instance
+    
+    async def _load_model(self):
+        """Load the model once."""
+        if self.classifier is None:
+            logger.info(f"Loading AI model {self.model_name}...")
+            device = 0 if torch.cuda.is_available() else -1
+            device_str = "cuda" if device == 0 else "cpu"
+            logger.info(f"Device set to use {device_str}")
+            loop = asyncio.get_event_loop()
+            try:
+                self.classifier = await loop.run_in_executor(
+                    None,
+                    lambda: pipeline(
+                        "zero-shot-classification",
+                        model=self.model_name,
+                        framework="pt",  # Explicitly specify PyTorch framework
+                        device=device
+                    )
+                )
+                logger.info(f"AI model loaded successfully on {device_str}")
+            except Exception as e:
+                logger.error(f"Failed to load model on {device_str}: {e}")
+                # Fallback to CPU if GPU fails
+                if device != -1:
+                    logger.info("Retrying with CPU...")
+                    self.classifier = await loop.run_in_executor(
+                        None,
+                        lambda: pipeline(
+                            "zero-shot-classification",
+                            model=self.model_name,
+                            framework="pt",
+                            device=-1
+                        )
+                    )
+                    logger.info("AI model loaded successfully on CPU (fallback)")
+                else:
+                    raise
+    
+    def get_classifier(self):
+        """Get the cached classifier."""
+        return self.classifier
+    
+
+class VibeExtractor:
+    def __init__(self):
+        """
+        Initializes the zero-shot classifier (lazy loaded).
+        The model 'distilbart-mnli-12-1' is excellent for semantic classification.
+        """
+        self.classifier = None
+        self.threshold = 0.3  # Lower threshold to be more inclusive (from 0.4)
+        self.candidate_labels = [
+            "casual", "elegant", "party", "date night", 
+            "90s", "minimalist", "sporty", "grunge", "vintage",
+            "bohemian", "preppy", "streetwear", "formal", "business casual",
+            "summer", "winter", "spring", "fall",
+            "neutral", "vibrant", "edgy", "classic", "trendy"
+            
+        ]
+    
+    async def _ensure_loaded(self):
+        """Ensure the model is loaded before use."""
+        if self.classifier is None:
+            cache = await ModelCache.get_instance()
+            self.classifier = cache.get_classifier()
+            if self.classifier is None:
+                raise RuntimeError("Failed to load classifier from cache")
+
+    async def extract_vibes(self, name: str, description: str = "") -> List[str]:
+        """Extract vibe tags using semantic AI classification."""
+        try:
+            await self._ensure_loaded()
+        except Exception as e:
+            logger.error(f"Failed to load classifier: {e}")
+            return []
+        
+        # Combine name and description for context
+        full_text = f"{name} {description}".strip()
+        
+        if not full_text:
+            logger.debug(f"Empty product text for name='{name}', description='{description}'")
+            return []
+
+        try:
+            # Perform classification
+            # multi_label=True allows the model to pick multiple tags (e.g., both '90s' and 'grunge')
+            result = self.classifier(
+                full_text, 
+                self.candidate_labels, 
+                multi_label=True
+            )
+
+            # result['labels'] and result['scores'] are returned in matching order
+            # We zip them together and filter by the confidence threshold
+            extracted_tags = [
+                label for label, score in zip(result['labels'], result['scores'])
+                if score >= self.threshold
+            ]
+            
+            if extracted_tags:
+                logger.debug(f"Extracted vibes for '{name}': {[(tag, score) for tag, score in zip(result['labels'], result['scores']) if tag in extracted_tags]}")
+            else:
+                logger.debug(f"No vibes above threshold {self.threshold} for '{name}'")
+
+            return extracted_tags
+        except Exception as e:
+            logger.error(f"Error extracting vibes for '{name}': {e}", exc_info=True)
+            return []

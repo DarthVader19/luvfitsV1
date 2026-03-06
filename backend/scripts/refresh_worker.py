@@ -10,7 +10,7 @@ from apscheduler.triggers.cron import CronTrigger
 
 from scrapers.scraper_manager import ScraperManager
 from logic.embedding_search import embedding_service
-from logic.outfit_builder import outfit_matcher
+from logic.outfit_builder import outfit_builder
 from logic.google_taxonomy import TaxonomyEnhancer
 from database.db import mongodb_client
 from database.models import Product
@@ -96,8 +96,8 @@ class RefreshWorker:
 
             # 5. Create outfits
             logger.info("Step 3: Generating outfits...")
-            outfits = await outfit_matcher.create_outfits(num_outfits=50)
-            saved = await outfit_matcher.save_outfits(outfits)
+            outfits = await outfit_builder.create_outfits(num_outfits=50)
+            saved = await outfit_builder.save_outfits(outfits)
             logger.info(f"Generated and saved {saved} outfits")
 
             logger.info("=== Data refresh complete ===")
@@ -105,7 +105,7 @@ class RefreshWorker:
         finally:
             await mongodb_client.disconnect()
 
-    async def on_demand_refresh(self) -> Dict:
+    async def on_demand_refresh(self) -> dict:
         """
         Execute refresh on-demand (e.g., from API endpoint).
         
@@ -156,7 +156,7 @@ class RefreshWorker:
         finally:
             await mongodb_client.disconnect()
 
-    def get_status(self) -> Dict:
+    def get_status(self) -> dict:
         """Get scheduler status."""
         return {
             "running": self.scheduler.running,

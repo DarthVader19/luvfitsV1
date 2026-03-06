@@ -3,7 +3,7 @@ import '../styles/SearchBar.css';
 
 function SearchBar({ onSearch, loading }) {
   const [query, setQuery] = useState('');
-  const suggestions = ['casual', 'Date Night', '90s', 'party', 'minimalist', 'elegant', 'sporty', 'formal'];
+  const suggestions = ['casual', 'Date Night', '90s', 'party', 'minimalist', 'elegant', 'sporty', 'formal','neutral','vibrant'];
 
   const handleSubmit = (e) => {
     e.preventDefault();

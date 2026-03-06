@@ -108,8 +108,14 @@ luvfits/
 - MongoDB (local or Atlas cloud)
 
 # Environment
-export MONGODB_URL=mongodb+srv://user:pass@cluster.mongodb.net/luvfits
-export SCRAPE_DO_API_KEY=your_scrape_do_key
+# Edit backend/.env
+MONGODB_URL=mongodb://localhost:27017
+SCRAPE_DO_API_KEY=your_scrape_do_key
+TARGET_PRODUCTS_PER_CATEGORY=25
+FALLBACK_PRODUCTS_JSON=backend/data/fallback_products.json
+
+# Edit frontend/.env
+VITE_API_BASE_URL=http://localhost:8000
 ```
 
 ### Backend Setup
@@ -149,6 +155,9 @@ npm run dev
 ```bash
 # Trigger initial data scrape (takes 1-2 minutes)
 curl -X POST http://localhost:8000/refresh
+
+# If Scrape.do returns fewer products, backend auto-fills
+# missing slots using backend/data/fallback_products.json
 
 # Check stats
 curl http://localhost:8000/stats

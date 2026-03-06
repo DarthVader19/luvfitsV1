@@ -13,7 +13,9 @@ from database.models import (
     RefreshResponse,
 )
 from logic.embedding_search import embedding_service
-from logic.outfit_builder import outfit_matcher
+from logic.outfit_builder import outfit_builder
+from logic.search_logic import search_outfits as search_outfits_ai
+from logic.outfit_matcher import search_outfits_async
 from scripts.refresh_worker import (
     refresh_worker,
     start_refresh_worker,
@@ -101,7 +103,7 @@ async def health_check():
 @app.post("/search", tags=["Search"])
 async def search_outfits(request: SearchRequest):
     """
-    Search for outfits by vibe query using semantic embeddings.
+    Search for outfits by vibe query.
     
     Args:
         request: SearchRequest with query and optional parameters
@@ -111,34 +113,66 @@ async def search_outfits(request: SearchRequest):
     """
     try:
         logger.info(f"Search query: {request.query}")
+        if not request.query or not request.query.strip():
+            raise HTTPException(status_code=400, detail="Query cannot be empty")
 
-        # Get outfits matching the vibe
-        all_outfits = await mongodb_client.get_all_outfits(limit=request.limit)
+        # Semantic outfit search using query embedding vs outfit embedding.
+        ranked_results = await embedding_service.search_outfits_by_query(
+            request.query, limit=request.limit
+        )
+        results = [item[0] for item in ranked_results]
+        scores_by_id = {
+            item[0].id: float(item[1])
+            for item in ranked_results
+            if item[0].id is not None
+        }
 
-        # Filter by vibe if specified
-        if request.include_vibes:
-            # Simple vibe-based filtering
-            filtered = [
-                o for o in all_outfits
+        logger.info(
+            f"Found {len(results)} semantically ranked outfits for '{request.query}'"
+        )
+
+        if not results and request.include_vibes:
+            query_lower = request.query.lower()
+            all_outfits = await mongodb_client.get_all_outfits(limit=500)
+            results = [
+                outfit for outfit in all_outfits
                 if any(
-                    vibe.lower() in request.query.lower()
-                    or request.query.lower() in vibe.lower()
-                    for vibe in o.vibes
+                    query_lower in vibe.lower() or vibe.lower() in query_lower
+                    for vibe in outfit.vibes
                 )
-            ]
-            results = filtered[:request.limit]
-        else:
-            results = all_outfits[:request.limit]
+            ][:request.limit]
+            logger.info(
+                f"Semantic search empty; fallback vibe matches: {len(results)}"
+            )
+        
+        # Serialize outfits properly
+        serialized_results = [
+            {
+                "id": outfit.id,
+                "top_id": outfit.top_id,
+                "bottom_id": outfit.bottom_id,
+                "shoe_id": outfit.shoe_id,
+                "accessory_id": outfit.accessory_id,
+                "vibes": outfit.vibes,
+                "compatibility_score": outfit.compatibility_score,
+                "semantic_score": scores_by_id.get(outfit.id, 0.0),
+                "color_harmony": outfit.color_harmony,
+                "total_price": outfit.total_price,
+                "created_at": outfit.created_at.isoformat() if hasattr(outfit.created_at, 'isoformat') else str(outfit.created_at),
+            }
+            for outfit in results
+        ]
 
         return {
             "status": "success",
             "query": request.query,
-            "results": results,
-            "count": len(results),
+            "best_outfit": serialized_results[0] if serialized_results else None,
+            "results": serialized_results,
+            "count": len(serialized_results),
         }
 
     except Exception as e:
-        logger.error(f"Search error: {e}")
+        logger.error(f"Search error: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -188,6 +222,149 @@ async def search_products(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/products", tags=["Products"])
+async def get_products(
+    category: str = Query(None, description="Filter by category (Tops, Bottoms, Shoes, Accessories)"),
+    site: str = Query(None, description="Filter by site (amazon, hm, nordstrom)"),
+    limit: int = Query(50, ge=1, le=200, description="Max results"),
+):
+    """
+    Get all products, optionally filtered by category or site.
+    
+    Args:
+        category: Optional category filter
+        site: Optional site filter
+        limit: Max results
+        
+    Returns:
+        List of products
+    """
+    try:
+        # Get all products
+        all_products = await mongodb_client.get_all_products(limit=limit)
+        
+        # Filter by category if specified
+        if category:
+            all_products = [p for p in all_products if p.category == category]
+        
+        # Filter by site if specified
+        if site:
+            all_products = [p for p in all_products if p.site.lower() == site.lower()]
+        
+        # Convert to dict for JSON response
+        products_list = [
+            {
+                "id": str(p.id) if hasattr(p, 'id') else p.get("_id"),
+                "name": p.name if hasattr(p, 'name') else p.get("name"),
+                "category": p.category if hasattr(p, 'category') else p.get("category"),
+                "site": p.site if hasattr(p, 'site') else p.get("site"),
+                "price": p.price if hasattr(p, 'price') else p.get("price"),
+                "product_url": p.product_url if hasattr(p, 'product_url') else p.get("product_url"),
+                "image_url": p.image_url if hasattr(p, 'image_url') else p.get("image_url"),
+                "description": p.description if hasattr(p, 'description') else p.get("description"),
+                "tags": p.tags if hasattr(p, 'tags') else p.get("tags"),
+            }
+            for p in all_products
+        ]
+        
+        return {
+            "status": "success",
+            "category": category,
+            "site": site,
+            "results": products_list,
+            "count": len(products_list),
+        }
+
+    except Exception as e:
+        logger.error(f"Error fetching products: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/search/outfit", tags=["Search"])
+async def search_outfit_ai(request: SearchRequest):
+    """
+    Generate an outfit using AI-powered tag extraction.
+    
+    Uses the BART model to extract vibes from the query, then finds products
+    with matching tags and builds the best outfit combination.
+    
+    Args:
+        request: SearchRequest with query and optional parameters
+        
+    Returns:
+        Generated outfit with top, bottom, shoes, and accessory
+    """
+    try:
+        logger.info(f"AI outfit search query: '{request.query}'")
+        
+        if not request.query or not request.query.strip():
+            raise HTTPException(status_code=400, detail="Query cannot be empty")
+        
+        # Use AI-powered search to generate outfit
+        outfit = await search_outfits_ai(request.query)
+        
+        # Parse the outfit response
+        if outfit:
+            return {
+                "status": "success",
+                "query": request.query,
+                "outfit": {
+                    "top": outfit.get("top"),
+                    "bottom": outfit.get("bottom"),
+                    "accessory": outfit.get("accessory"),
+                    "shoe": outfit.get("shoe"),
+                    "compatibility_score": outfit.get("compatibility_score", 0.0),
+                    "matched_tags": outfit.get("matched_tags", []),
+                },
+            }
+        else:
+            raise HTTPException(status_code=404, detail="Could not generate outfit for this query")
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"AI outfit search error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
+
+
+@app.post("/search/outfit/matcher", tags=["Search"])
+async def search_outfit_matcher(request: SearchRequest):
+    """
+    Generate an outfit using the OutfitMatcher with AI tag extraction.
+    
+    Alternative implementation using OutfitMatcher class.
+    
+    Args:
+        request: SearchRequest with query and optional parameters
+        
+    Returns:
+        Generated outfit with matching tags
+    """
+    try:
+        logger.info(f"OutfitMatcher query: '{request.query}'")
+        
+        if not request.query or not request.query.strip():
+            raise HTTPException(status_code=400, detail="Query cannot be empty")
+        
+        # Use OutfitMatcher
+        outfit = await search_outfits_async(request.query)
+        
+        if outfit and any(outfit.values()):
+            return {
+                "status": "success",
+                "query": request.query,
+                "outfit": outfit,
+            }
+        else:
+            raise HTTPException(status_code=404, detail="Could not generate outfit for this query")
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"OutfitMatcher search error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
+
+
 # ============================================================================
 # Outfit Endpoints
 # ============================================================================
@@ -215,12 +392,29 @@ async def get_outfits(
             )
         else:
             outfits = await mongodb_client.get_all_outfits(limit=limit)
-
+        
+        # Ensure outfits are properly serialized
+        outfit_list = [
+            {
+                "id": outfit.id,
+                "top_id": outfit.top_id,
+                "bottom_id": outfit.bottom_id,
+                "shoe_id": outfit.shoe_id,
+                "accessory_id": outfit.accessory_id,
+                "vibes": outfit.vibes,
+                "compatibility_score": outfit.compatibility_score,
+                "color_harmony": outfit.color_harmony,
+                "total_price": outfit.total_price,
+                "created_at": outfit.created_at.isoformat() if hasattr(outfit.created_at, 'isoformat') else str(outfit.created_at),
+            }
+            for outfit in outfits
+        ]
+            
         return {
             "status": "success",
             "vibe": vibe,
-            "outfits": outfits,
-            "count": len(outfits),
+            "outfits": outfit_list,
+            "count": len(outfit_list),
         }
 
     except Exception as e:
@@ -245,9 +439,23 @@ async def get_outfit_detail(outfit_id: str):
         shoes = await mongodb_client.get_product(outfit.shoe_id)
         accessory = await mongodb_client.get_product(outfit.accessory_id)
 
+        # Serialize outfit properly
+        outfit_data = {
+            "id": outfit.id,
+            "top_id": outfit.top_id,
+            "bottom_id": outfit.bottom_id,
+            "shoe_id": outfit.shoe_id,
+            "accessory_id": outfit.accessory_id,
+            "vibes": outfit.vibes,
+            "compatibility_score": outfit.compatibility_score,
+            "color_harmony": outfit.color_harmony,
+            "total_price": outfit.total_price,
+            "created_at": outfit.created_at.isoformat() if hasattr(outfit.created_at, 'isoformat') else str(outfit.created_at),
+        }
+
         return {
             "status": "success",
-            "outfit": outfit,
+            "outfit": outfit_data,
             "products": {
                 "top": top,
                 "bottom": bottom,
@@ -271,7 +479,7 @@ async def get_outfit_detail(outfit_id: str):
 @app.post("/refresh", tags=["Data Management"])
 async def trigger_refresh():
     """
-    Trigger on-demand data refresh: scrape, embed, and generate outfits.
+    Trigger on-demand data refresh: scrape and generate outfits.
     
     Returns:
         Refresh status and results
@@ -279,30 +487,24 @@ async def trigger_refresh():
     try:
         logger.info("On-demand refresh triggered via API")
 
-        # Use the refresh worker
+        from scrapers.scraper_manager import ScraperManager
+
+        manager = ScraperManager()
+        results = await manager.refresh_all_data()
+
+        # Get updated stats
         await mongodb_client.connect()
-
         try:
-            from scrapers.scraper_manager import ScraperManager
-
-            manager = ScraperManager()
-            results = await manager.refresh_all_data()
-
-            # Generate outfits
-            outfits = await outfit_matcher.create_outfits(num_outfits=50)
-            await outfit_matcher.save_outfits(outfits)
-
             stats = await mongodb_client.get_stats()
-
-            return RefreshResponse(
-                status="success",
-                message="Data refresh completed successfully",
-                products_total=stats.get("total_products", 0),
-                outfits_generated=len(outfits),
-            )
-
         finally:
             await mongodb_client.disconnect()
+
+        return RefreshResponse(
+            status="success",
+            message="Data refresh completed successfully",
+            products_total=stats.get("total_products", 0),
+            outfits_generated=results.get("outfits_generated", 0),
+        )
 
     except Exception as e:
         logger.error(f"Refresh error: {e}")

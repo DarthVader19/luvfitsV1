@@ -2,8 +2,9 @@
 MongoDB models using Pydantic for type safety and validation.
 """
 from datetime import datetime
-from typing import List, Optional
-from pydantic import BaseModel, Field
+from typing import List, Optional, Any
+from pydantic import BaseModel, Field, field_validator
+from bson import ObjectId
 
 
 class Product(BaseModel):
@@ -27,6 +28,16 @@ class Product(BaseModel):
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_id_to_string(cls, v: Any) -> Optional[str]:
+        """Convert ObjectId to string."""
+        if v is None:
+            return None
+        if isinstance(v, ObjectId):
+            return str(v)
+        return v
+
     class Config:
         populate_by_name = True
 
@@ -46,6 +57,16 @@ class Outfit(BaseModel):
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_id_to_string(cls, v: Any) -> Optional[str]:
+        """Convert ObjectId to string."""
+        if v is None:
+            return None
+        if isinstance(v, ObjectId):
+            return str(v)
+        return v
+
     class Config:
         populate_by_name = True
 
@@ -61,6 +82,16 @@ class ScrapingJob(BaseModel):
     started_at: datetime = Field(default_factory=datetime.utcnow)
     completed_at: Optional[datetime] = None
 
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_id_to_string(cls, v: Any) -> Optional[str]:
+        """Convert ObjectId to string."""
+        if v is None:
+            return None
+        if isinstance(v, ObjectId):
+            return str(v)
+        return v
+
     class Config:
         populate_by_name = True
 
@@ -72,6 +103,16 @@ class SearchQuery(BaseModel):
     embedding: Optional[List[float]] = None
     results_count: int = 0
     created_at: datetime = Field(default_factory=datetime.utcnow)
+
+    @field_validator("id", mode="before")
+    @classmethod
+    def convert_id_to_string(cls, v: Any) -> Optional[str]:
+        """Convert ObjectId to string."""
+        if v is None:
+            return None
+        if isinstance(v, ObjectId):
+            return str(v)
+        return v
 
     class Config:
         populate_by_name = True
