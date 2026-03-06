@@ -3,7 +3,7 @@ Embedding-based vibe search using semantic similarity.
 Uses sentence-transformers for efficient vector search.
 """
 import logging
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any
 from sentence_transformers import SentenceTransformer
 import numpy as np
 from database.db import mongodb_client
@@ -23,7 +23,7 @@ class EmbeddingService:
             model_name: Sentence-transformers model name
         """
         try:
-            self.model = SentenceTransformer("all-MiniLM-L6-v2")
+            self.model = SentenceTransformer(model_name)
             logger.info(f"Loaded embedding model: {model_name}")
         except Exception as e:
             logger.error(f"Failed to load embedding model: {e}")
@@ -136,52 +136,6 @@ class EmbeddingService:
         combined_text = " ".join(texts) + " " + " ".join(outfit.vibes)
 
         return self.generate_embedding(combined_text)
-
-    async def search_outfits_by_query(
-        self, query: str, limit: int = 10
-    ) -> List[Tuple[Outfit, float]]:
-        """
-        Rank outfits by semantic similarity to a user query.
-
-        Args:
-            query: User search query
-            limit: Max results to return
-
-        Returns:
-            List of (outfit, similarity) tuples sorted by score desc
-        """
-        if not self.model:
-            logger.error("Embedding model not available")
-            return []
-
-        query_embedding = self.generate_embedding(query)
-        if not query_embedding:
-            return []
-
-        all_outfits = await mongodb_client.get_all_outfits(limit=1000)
-        if not all_outfits:
-            return []
-
-        # Build a product lookup map once so we can embed outfits missing vectors.
-        all_products = await mongodb_client.get_all_products(limit=5000)
-        products_map = {p.id: p for p in all_products if p.id}
-
-        scored_outfits: List[Tuple[Outfit, float]] = []
-        for outfit in all_outfits:
-            outfit_embedding = outfit.embedding
-            if not outfit_embedding:
-                outfit_embedding = await self.generate_outfit_embedding(
-                    outfit, products_map
-                )
-
-            if not outfit_embedding:
-                continue
-
-            similarity = self.cosine_similarity(query_embedding, outfit_embedding)
-            scored_outfits.append((outfit, similarity))
-
-        scored_outfits.sort(key=lambda x: x[1], reverse=True)
-        return scored_outfits[:limit]
 
     async def find_similar_outfits(
         self, outfit_id: str, limit: int = 5

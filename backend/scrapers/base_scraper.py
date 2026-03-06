@@ -258,11 +258,7 @@ class VibeExtractor:
         self.threshold = 0.3  # Lower threshold to be more inclusive (from 0.4)
         self.candidate_labels = [
             "casual", "elegant", "party", "date night", 
-            "90s", "minimalist", "sporty", "grunge", "vintage",
-            "bohemian", "preppy", "streetwear", "formal", "business casual",
-            "summer", "winter", "spring", "fall",
-            "neutral", "vibrant", "edgy", "classic", "trendy"
-            
+            "90s", "minimalist", "sporty", "grunge", "vintage"
         ]
     
     async def _ensure_loaded(self):
