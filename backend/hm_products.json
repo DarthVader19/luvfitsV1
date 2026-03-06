@@ -1,279 +1,63 @@
 [
   {
-    "name": "Sweatshirt with Collar",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Sweatshirt with Collar MATCHING SET Save to Favorites Sweatshirt with Collar Sweatshirt with Collar Sweatshirt with Collar $19.99 +1",
-    "image_url": "https://image.hm.com/assets/hm/db/87/db87bb3df4f267e094b86d1e9500093cd2977920.jpg?imwidth=1536",
-    "product_url": "https://www2.hm.com/en_us/productpage.1330298004.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Oversized Sweatshirt",
+    "name": "Pointelle-knit cotton top",
     "price": 0.0,
     "currency": "USD",
     "color": "Navy",
     "color_family": "neutral",
-    "description": "Oversized Sweatshirt MATCHING SET Save to Favorites Oversized Sweatshirt Oversized Sweatshirt Oversized Sweatshirt $19.99",
-    "image_url": "https://image.hm.com/assets/hm/c7/0b/c70b576fc80e5700d6589de9d0dffc5b7f8a7375.jpg?imwidth=1536",
-    "product_url": "https://www2.hm.com/en_us/productpage.1243667033.html",
+    "description": "Pointelle-knit cotton top -16% Save to Favourites Pointelle-knit cotton top Pointelle-knit cotton top Pointelle-knit cotton top Discounted price Rs.589.00 Normal price Rs.699.00",
+    "image_url": "https://image.hm.com/assets/hm/0a/35/0a352d8fe870a5bce9b1780b0bc6d6e9399bf819.jpg?imwidth=1536",
+    "product_url": "https://www2.hm.com/en_in/productpage.1322825001.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Broderie anglaise blouse",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Red",
+    "color_family": "warm",
+    "description": "Broderie anglaise blouse Save to Favourites Broderie anglaise blouse Broderie anglaise blouse Broderie anglaise blouse Rs.2,799.00",
+    "image_url": "https://image.hm.com/assets/hm/d7/e5/d7e578b1b7ddd8183c0a130774c338a61c480283.jpg?imwidth=1536",
+    "product_url": "https://www2.hm.com/en_in/productpage.1328418001.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
     "tags": [
-      "sporty",
       "elegant"
     ],
     "style_score": 0.7,
     "available": true
   },
   {
-    "name": "Cotton Sweatshirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Unknown",
-    "color_family": "neutral",
-    "description": "Cotton Sweatshirt Save to Favorites Cotton Sweatshirt Cotton Sweatshirt H&M Studio Collection Cotton Sweatshirt $74.99",
-    "image_url": "https://image.hm.com/assets/hm/33/c4/33c4a150acd80d5a2f2fedc1eea3987d012b032b.jpg?imwidth=1536",
-    "product_url": "https://www2.hm.com/en_us/productpage.1329617001.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant",
-      "casual"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Oversized Rugby Shirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Unknown",
-    "color_family": "neutral",
-    "description": "Oversized Rugby Shirt Save to Favorites Oversized Rugby Shirt Oversized Rugby Shirt Oversized Rugby Shirt $29.99",
-    "image_url": "https://image.hm.com/assets/hm/2f/f7/2ff71560c4d453e401648f6a84b047fa09749dfe.jpg?imwidth=1536",
-    "product_url": "https://www2.hm.com/en_us/productpage.1344321002.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Hooded Jacket",
+    "name": "Crochet-look top",
     "price": 0.0,
     "currency": "USD",
     "color": "Black",
     "color_family": "neutral",
-    "description": "Hooded Jacket MATCHING SET Save to Favorites Hooded Jacket Hooded Jacket Hooded Jacket $29.99 +2",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1321655001.html",
+    "description": "Crochet-look top -15% Save to Favourites Crochet-look top Crochet-look top Crochet-look top Discounted price Rs.1,269.00 Normal price Rs.1,499.00",
+    "image_url": "https://image.hm.com/assets/hm/cb/57/cb579a665b105d7acfea3d011c7bac4e4ceeccaa.jpg?imwidth=1536",
+    "product_url": "https://www2.hm.com/en_in/productpage.1329373001.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
+    "tags": [],
     "style_score": 0.7,
     "available": true
   },
   {
-    "name": "Sweatshirt with Collar",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Sweatshirt with Collar MATCHING SET Save to Favorites Sweatshirt with Collar Sweatshirt with Collar Sweatshirt with Collar $19.99 +1",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1330298003.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Sweatshirt with Collar",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Pink",
-    "color_family": "primary",
-    "description": "Sweatshirt with Collar MATCHING SET Save to Favorites Sweatshirt with Collar Sweatshirt with Collar Sweatshirt with Collar $19.99 +1",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1330298002.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Sweatshirt with Collar",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Sweatshirt with Collar MATCHING SET Save to Favorites Sweatshirt with Collar Sweatshirt with Collar Sweatshirt with Collar $19.99 +1",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1330298001.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Oversized Sweatshirt with Printed Motif",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Oversized Sweatshirt with Printed Motif Save to Favorites Oversized Sweatshirt with Printed Motif Oversized Sweatshirt with Printed Motif Oversized Sweatshirt with Printed Motif $29.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1314590002.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Oversized Sweatshirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Oversized Sweatshirt MATCHING SET Save to Favorites Oversized Sweatshirt Oversized Sweatshirt Oversized Sweatshirt $24.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1322975002.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Scuba sweatshirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Pink",
-    "color_family": "primary",
-    "description": "Scuba sweatshirt Save to Favorites Scuba sweatshirt Scuba sweatshirt Scuba sweatshirt $39.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1324033002.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Oversized Sweatshirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "neutral",
-    "description": "Oversized Sweatshirt Save to Favorites Oversized Sweatshirt Oversized Sweatshirt Oversized Sweatshirt $24.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1322975001.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Sweatshirt with Printed Motif",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "neutral",
-    "description": "Sweatshirt with Printed Motif MATCHING SET Save to Favorites Sweatshirt with Printed Motif Sweatshirt with Printed Motif Sweatshirt with Printed Motif $19.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1314276005.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Sweatshirt with Printed Motif",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "neutral",
-    "description": "Sweatshirt with Printed Motif MATCHING SET Save to Favorites Sweatshirt with Printed Motif Sweatshirt with Printed Motif Sweatshirt with Printed Motif $19.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1314276006.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Short Hooded Jacket",
+    "name": "Twist-detail top",
     "price": 0.0,
     "currency": "USD",
     "color": "Black",
     "color_family": "neutral",
-    "description": "Short Hooded Jacket MATCHING SET Save to Favorites Short Hooded Jacket Short Hooded Jacket Short Hooded Jacket $24.99 +1",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1330087001.html",
+    "description": "Twist-detail top Save to Favourites Twist-detail top Twist-detail top Twist-detail top Rs.999.00",
+    "image_url": "https://image.hm.com/assets/hm/a5/89/a589bb39dfbe47b58db3e3602d3fa7af0ca58aab.jpg?imwidth=1536",
+    "product_url": "https://www2.hm.com/en_in/productpage.1322860001.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
@@ -285,70 +69,46 @@
     "available": true
   },
   {
-    "name": "Hoodie",
+    "name": "Asymmetric top",
     "price": 0.0,
     "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Hoodie Save to Favorites Hoodie Hoodie Hoodie $24.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1307896012.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Oversized Sweatshirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Oversized Sweatshirt Save to Favorites Oversized Sweatshirt Oversized Sweatshirt Oversized Sweatshirt $24.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1345017001.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Raglan-Sleeved Sweatshirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Gray",
+    "color": "White",
     "color_family": "neutral",
-    "description": "Raglan-Sleeved Sweatshirt MATCHING SET Save to Favorites Raglan-Sleeved Sweatshirt Raglan-Sleeved Sweatshirt Raglan-Sleeved Sweatshirt $19.99",
+    "description": "Asymmetric top -15% Save to Favourites Asymmetric top Asymmetric top Asymmetric top Discounted price Rs.849.00 Normal price Rs.999.00",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1329678001.html",
+    "product_url": "https://www2.hm.com/en_in/productpage.1322890003.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
+    "tags": [],
     "style_score": 0.7,
     "available": true
   },
   {
-    "name": "Sweatshirt with Motif",
+    "name": "V-neck T-shirt",
     "price": 0.0,
     "currency": "USD",
     "color": "Green",
     "color_family": "cool",
-    "description": "Sweatshirt with Motif Save to Favorites Sweatshirt with Motif Sweatshirt with Motif Sweatshirt with Motif $29.99 +2",
+    "description": "V-neck T-shirt -15% Save to Favourites V-neck T-shirt V-neck T-shirt V-neck T-shirt Discounted price Rs.849.00 Normal price Rs.999.00",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1323055004.html",
+    "product_url": "https://www2.hm.com/en_in/productpage.1325730002.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Ballerina-neckline top",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Green",
+    "color_family": "cool",
+    "description": "Ballerina-neckline top -16% Save to Favourites Ballerina-neckline top Ballerina-neckline top Ballerina-neckline top Discounted price Rs.589.00 Normal price Rs.699.00 +1",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1318967004.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
@@ -360,71 +120,81 @@
     "available": true
   },
   {
-    "name": "Cropped Sweatshirt Jacket",
+    "name": "Twist-detail top",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Blue",
+    "color_family": "cool",
+    "description": "Twist-detail top Save to Favourites Twist-detail top Twist-detail top Twist-detail top Rs.999.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1322860003.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "sporty",
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Pointelle-knit cotton top",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Navy",
+    "color_family": "neutral",
+    "description": "Pointelle-knit cotton top -16% Save to Favourites Pointelle-knit cotton top Pointelle-knit cotton top Pointelle-knit cotton top Discounted price Rs.589.00 Normal price Rs.699.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1322825002.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Asymmetric top",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Black",
+    "color_family": "neutral",
+    "description": "Asymmetric top -15% Save to Favourites Asymmetric top Asymmetric top Asymmetric top Discounted price Rs.849.00 Normal price Rs.999.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1322890001.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Smocked waistcoat",
     "price": 0.0,
     "currency": "USD",
     "color": "Beige",
     "color_family": "neutral",
-    "description": "Cropped Sweatshirt Jacket Save to Favorites Cropped Sweatshirt Jacket Cropped Sweatshirt Jacket Cropped Sweatshirt Jacket $19.99",
+    "description": "Smocked waistcoat -15% Save to Favourites Smocked waistcoat Smocked waistcoat Smocked waistcoat Discounted price Rs.1,269.00 Normal price Rs.1,499.00",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1316978001.html",
+    "product_url": "https://www2.hm.com/en_in/productpage.1333697002.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
+    "tags": [],
     "style_score": 0.7,
     "available": true
   },
   {
-    "name": "Oversized Sweatshirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Pink",
-    "color_family": "primary",
-    "description": "Oversized Sweatshirt Save to Favorites Oversized Sweatshirt Oversized Sweatshirt Oversized Sweatshirt $24.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1322975004.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Hooded Jacket",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Hooded Jacket Save to Favorites Hooded Jacket Hooded Jacket Hooded Jacket $29.99 +2",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1321655008.html",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Oversized Sweatshirt with Printed Motif",
+    "name": "Twist-detail top",
     "price": 0.0,
     "currency": "USD",
     "color": "Beige",
     "color_family": "neutral",
-    "description": "Oversized Sweatshirt with Printed Motif Save to Favorites Oversized Sweatshirt with Printed Motif Oversized Sweatshirt with Printed Motif Oversized Sweatshirt with Printed Motif $29.99",
+    "description": "Twist-detail top Save to Favourites Twist-detail top Twist-detail top Twist-detail top Rs.999.00",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1314590003.html",
+    "product_url": "https://www2.hm.com/en_in/productpage.1322860002.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
@@ -436,39 +206,222 @@
     "available": true
   },
   {
-    "name": "Raglan-Sleeved Sweatshirt",
+    "name": "Bubble-hem cotton top",
     "price": 0.0,
     "currency": "USD",
-    "color": "Gray",
+    "color": "Beige",
     "color_family": "neutral",
-    "description": "Raglan-Sleeved Sweatshirt MATCHING SET Save to Favorites Raglan-Sleeved Sweatshirt Raglan-Sleeved Sweatshirt Raglan-Sleeved Sweatshirt $19.99",
+    "description": "Bubble-hem cotton top -15% Save to Favourites Bubble-hem cotton top Bubble-hem cotton top Bubble-hem cotton top Discounted price Rs.1,269.00 Normal price Rs.1,499.00",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1329678003.html",
+    "product_url": "https://www2.hm.com/en_in/productpage.1329087003.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
+    "tags": [],
     "style_score": 0.7,
     "available": true
   },
   {
-    "name": "Hoodie",
+    "name": "Gathered jersey top",
     "price": 0.0,
     "currency": "USD",
-    "color": "Gray",
+    "color": "Grey",
     "color_family": "neutral",
-    "description": "Hoodie Save to Favorites Hoodie Hoodie Hoodie $24.99",
+    "description": "Gathered jersey top -15% Save to Favourites Gathered jersey top Gathered jersey top Gathered jersey top Discounted price Rs.849.00 Normal price Rs.999.00",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1310763007.html",
+    "product_url": "https://www2.hm.com/en_in/productpage.1297559002.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Printed T-shirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "White",
+    "color_family": "neutral",
+    "description": "Printed T-shirt -16% Save to Favourites Printed T-shirt Printed T-shirt Printed T-shirt Discounted price Rs.589.00 Normal price Rs.699.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1330170007.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Textured jersey top",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "White",
+    "color_family": "neutral",
+    "description": "Textured jersey top -15% Save to Favourites Textured jersey top Textured jersey top Textured jersey top Discounted price Rs.679.00 Normal price Rs.799.00 +1",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1267570002.html",
     "category": "Tops",
     "subcategory": null,
     "site": "H&M",
     "tags": [
       "sporty"
     ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Frill-trimmed cotton poplin top",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Pink",
+    "color_family": "primary",
+    "description": "Frill-trimmed cotton poplin top -15% Save to Favourites Frill-trimmed cotton poplin top Frill-trimmed cotton poplin top Frill-trimmed cotton poplin top Discounted price Rs.1,099.00 Normal price Rs.1,299.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1317038003.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "minimalist",
+      "sporty"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Oversized print-motif T-shirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Blue",
+    "color_family": "cool",
+    "description": "Oversized print-motif T-shirt -15% Save to Favourites Oversized print-motif T-shirt Oversized print-motif T-shirt Oversized print-motif T-shirt Discounted price Rs.849.00 Normal price Rs.999.00 +7",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1314589035.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Fitted polo shirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Blue",
+    "color_family": "cool",
+    "description": "Fitted polo shirt -15% Save to Favourites Fitted polo shirt Fitted polo shirt Fitted polo shirt Discounted price Rs.1,269.00 Normal price Rs.1,499.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1323884003.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Draped jersey vest top",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Grey",
+    "color_family": "neutral",
+    "description": "Draped jersey vest top -15% Save to Favourites Draped jersey vest top Draped jersey vest top Draped jersey vest top Discounted price Rs.679.00 Normal price Rs.799.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1298179002.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "sporty",
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Peplum blouse",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Pink",
+    "color_family": "primary",
+    "description": "Peplum blouse -15% Save to Favourites Peplum blouse Peplum blouse Peplum blouse Discounted price Rs.1,189.00 Normal price Rs.1,399.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1297794001.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Printed T-shirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Red",
+    "color_family": "warm",
+    "description": "Printed T-shirt -16% Save to Favourites Printed T-shirt Printed T-shirt Printed T-shirt Discounted price Rs.589.00 Normal price Rs.699.00 +6",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1267378010.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Oversized print-motif T-shirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Green",
+    "color_family": "cool",
+    "description": "Oversized print-motif T-shirt -15% Save to Favourites Oversized print-motif T-shirt Oversized print-motif T-shirt Oversized print-motif T-shirt Discounted price Rs.849.00 Normal price Rs.999.00 +7",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1314589014.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "party"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Printed T-shirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Printed T-shirt -16% Save to Favourites Printed T-shirt Printed T-shirt Printed T-shirt Discounted price Rs.589.00 Normal price Rs.699.00",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1330170001.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Fitted T-shirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Navy",
+    "color_family": "neutral",
+    "description": "Fitted T-shirt -16% Save to Favourites Fitted T-shirt Fitted T-shirt Fitted T-shirt Discounted price Rs.589.00 Normal price Rs.699.00 +1",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_in/productpage.1329176003.html",
+    "category": "Tops",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [],
     "style_score": 0.7,
     "available": true
   },
@@ -485,8 +438,8 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
-      "elegant",
-      "minimalist"
+      "minimalist",
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -504,9 +457,9 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -524,8 +477,8 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
-      "elegant",
-      "minimalist"
+      "minimalist",
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -543,9 +496,9 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -563,9 +516,9 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -583,8 +536,8 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
-      "elegant",
-      "minimalist"
+      "minimalist",
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -609,64 +562,6 @@
     "available": true
   },
   {
-    "name": "Tiered Viscose Mini Skirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Cream",
-    "color_family": "neutral",
-    "description": "Tiered Viscose Mini Skirt Save to Favorites Tiered Viscose Mini Skirt Tiered Viscose Mini Skirt Tiered Viscose Mini Skirt $24.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1314358001.html",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Lace Midi Skirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Beige",
-    "color_family": "neutral",
-    "description": "Lace Midi Skirt Save to Favorites Lace Midi Skirt Lace Midi Skirt Lace Midi Skirt $29.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1333360001.html",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Midi Skirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Beige",
-    "color_family": "neutral",
-    "description": "Midi Skirt Save to Favorites Midi Skirt Midi Skirt Midi Skirt $39.99 +4",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1184662051.html",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
     "name": "Short Denim Skirt",
     "price": 0.0,
     "currency": "USD",
@@ -679,9 +574,29 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Tiered Viscose Mini Skirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Cream",
+    "color_family": "neutral",
+    "description": "Tiered Viscose Mini Skirt Save to Favorites Tiered Viscose Mini Skirt Tiered Viscose Mini Skirt Tiered Viscose Mini Skirt $24.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1314358001.html",
+    "category": "Bottoms",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "minimalist",
+      "sporty",
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -725,6 +640,44 @@
     "available": true
   },
   {
+    "name": "Lace Midi Skirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Beige",
+    "color_family": "neutral",
+    "description": "Lace Midi Skirt Save to Favorites Lace Midi Skirt Lace Midi Skirt Lace Midi Skirt $29.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1333360001.html",
+    "category": "Bottoms",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Midi Skirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Beige",
+    "color_family": "neutral",
+    "description": "Midi Skirt Save to Favorites Midi Skirt Midi Skirt Midi Skirt $39.99 +5",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1184662051.html",
+    "category": "Bottoms",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "minimalist",
+      "sporty",
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
     "name": "A-line denim skirt",
     "price": 0.0,
     "currency": "USD",
@@ -737,8 +690,8 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
-      "elegant",
-      "minimalist"
+      "minimalist",
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -784,38 +737,18 @@
     "name": "Midi Skirt",
     "price": 0.0,
     "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Midi Skirt Save to Favorites Midi Skirt Midi Skirt Midi Skirt $29.99 +4",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1246922003.html",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Midi Skirt",
-    "price": 0.0,
-    "currency": "USD",
     "color": "Beige",
     "color_family": "neutral",
-    "description": "Midi Skirt Save to Favorites Midi Skirt Midi Skirt Midi Skirt $29.99 +4",
+    "description": "Midi Skirt Save to Favorites Midi Skirt Midi Skirt Midi Skirt $29.99 +3",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
     "product_url": "https://www2.hm.com/en_us/productpage.1246922033.html",
     "category": "Bottoms",
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -833,9 +766,9 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -898,21 +831,59 @@
     "available": true
   },
   {
+    "name": "MAMA Lace-Trimmed Satin Skirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Black",
+    "color_family": "neutral",
+    "description": "MAMA Lace-Trimmed Satin Skirt Save to Favorites MAMA Lace-Trimmed Satin Skirt MAMA Lace-Trimmed Satin Skirt MAMA Lace-Trimmed Satin Skirt $49.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1329334001.html",
+    "category": "Bottoms",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "minimalist",
+      "sporty",
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
     "name": "Midi Skirt",
     "price": 0.0,
     "currency": "USD",
     "color": "White",
     "color_family": "neutral",
-    "description": "Midi Skirt Save to Favorites Midi Skirt Midi Skirt Midi Skirt $39.99 +4",
+    "description": "Midi Skirt Save to Favorites Midi Skirt Midi Skirt Midi Skirt $39.99 +5",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
     "product_url": "https://www2.hm.com/en_us/productpage.1184662064.html",
     "category": "Bottoms",
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "A-Line Denim Skirt",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Blue",
+    "color_family": "cool",
+    "description": "A-Line Denim Skirt Save to Favorites A-Line Denim Skirt A-Line Denim Skirt A-Line Denim Skirt $39.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1323692001.html",
+    "category": "Bottoms",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -930,29 +901,9 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "MAMA Lace-Trimmed Satin Skirt",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "MAMA Lace-Trimmed Satin Skirt Save to Favorites MAMA Lace-Trimmed Satin Skirt MAMA Lace-Trimmed Satin Skirt MAMA Lace-Trimmed Satin Skirt $49.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1329334001.html",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -1008,9 +959,9 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -1083,9 +1034,9 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "party",
       "sporty",
-      "elegant",
-      "party"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -1099,25 +1050,6 @@
     "description": "Braided Flats Save to Favorites Braided Flats Braided Flats Braided Flats $29.99",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
     "product_url": "https://www2.hm.com/en_us/productpage.1319586002.html",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Braided-Look Ballet Flats",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Braided-Look Ballet Flats Save to Favorites Braided-Look Ballet Flats Braided-Look Ballet Flats Braided-Look Ballet Flats $29.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1319576005.html",
     "category": "Shoes",
     "subcategory": null,
     "site": "H&M",
@@ -1147,6 +1079,25 @@
     "available": true
   },
   {
+    "name": "Sandals",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Black",
+    "color_family": "neutral",
+    "description": "Sandals Save to Favorites Sandals Sandals Sandals $29.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1270652002.html",
+    "category": "Shoes",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "sporty",
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
     "name": "Slingback Pumps",
     "price": 0.0,
     "currency": "USD",
@@ -1166,14 +1117,33 @@
     "available": true
   },
   {
-    "name": "Sandals",
+    "name": "Kitten-Heeled Pointed Slingbacks",
     "price": 0.0,
     "currency": "USD",
-    "color": "Black",
+    "color": "Beige",
     "color_family": "neutral",
-    "description": "Sandals Save to Favorites Sandals Sandals Sandals $29.99",
+    "description": "Kitten-Heeled Pointed Slingbacks Save to Favorites Kitten-Heeled Pointed Slingbacks Kitten-Heeled Pointed Slingbacks Kitten-Heeled Pointed Slingbacks $29.99",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1270652002.html",
+    "product_url": "https://www2.hm.com/en_us/productpage.1291726002.html",
+    "category": "Shoes",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "sporty",
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Patent Slingbacks",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Pink",
+    "color_family": "primary",
+    "description": "Patent Slingbacks Save to Favorites Patent Slingbacks Patent Slingbacks Patent Slingbacks $39.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1295872003.html",
     "category": "Shoes",
     "subcategory": null,
     "site": "H&M",
@@ -1216,28 +1186,27 @@
     "subcategory": null,
     "site": "H&M",
     "tags": [
+      "minimalist",
       "sporty",
-      "elegant",
-      "minimalist"
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
   },
   {
-    "name": "Kitten-Heeled Pointed Slingbacks",
+    "name": "Sneakers",
     "price": 0.0,
     "currency": "USD",
     "color": "Beige",
     "color_family": "neutral",
-    "description": "Kitten-Heeled Pointed Slingbacks Save to Favorites Kitten-Heeled Pointed Slingbacks Kitten-Heeled Pointed Slingbacks Kitten-Heeled Pointed Slingbacks $29.99",
+    "description": "Sneakers Save to Favorites Sneakers Sneakers Sneakers $44.99",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1291726002.html",
+    "product_url": "https://www2.hm.com/en_us/productpage.1312674001.html",
     "category": "Shoes",
     "subcategory": null,
     "site": "H&M",
     "tags": [
-      "sporty",
-      "elegant"
+      "sporty"
     ],
     "style_score": 0.7,
     "available": true
@@ -1251,25 +1220,6 @@
     "description": "Crossover-Strap Sandals Save to Favorites Crossover-Strap Sandals Crossover-Strap Sandals Crossover-Strap Sandals $24.99 +2",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
     "product_url": "https://www2.hm.com/en_us/productpage.1274480004.html",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Patent Slingbacks",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Pink",
-    "color_family": "primary",
-    "description": "Patent Slingbacks Save to Favorites Patent Slingbacks Patent Slingbacks Patent Slingbacks $39.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1295872003.html",
     "category": "Shoes",
     "subcategory": null,
     "site": "H&M",
@@ -1338,6 +1288,24 @@
     "available": true
   },
   {
+    "name": "Heeled Suede Sandals",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Green",
+    "color_family": "cool",
+    "description": "Heeled Suede Sandals Save to Favorites Heeled Suede Sandals Heeled Suede Sandals H&M Limited Edition Heeled Suede Sandals $74.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1320361001.html",
+    "category": "Shoes",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "elegant"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
     "name": "Loafer Mules",
     "price": 0.0,
     "currency": "USD",
@@ -1364,12 +1332,32 @@
     "color_family": "neutral",
     "description": "Sneakers Save to Favorites Sneakers Sneakers Sneakers $44.99",
     "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1312674001.html",
+    "product_url": "https://www2.hm.com/en_us/productpage.1312674002.html",
     "category": "Shoes",
     "subcategory": null,
     "site": "H&M",
     "tags": [
       "sporty"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Ballet Flats",
+    "price": 0.0,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Ballet Flats Save to Favorites Ballet Flats Ballet Flats Ballet Flats $24.99",
+    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "product_url": "https://www2.hm.com/en_us/productpage.1270485012.html",
+    "category": "Shoes",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "minimalist",
+      "sporty",
+      "elegant"
     ],
     "style_score": 0.7,
     "available": true
@@ -1389,45 +1377,6 @@
     "tags": [
       "sporty",
       "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Knee-High Boots",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Knee-High Boots Save to Favorites Knee-High Boots Knee-High Boots Knee-High Boots $109.00",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1328038001.html",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant"
-    ],
-    "style_score": 0.7,
-    "available": true
-  },
-  {
-    "name": "Ballet Flats",
-    "price": 0.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Ballet Flats Save to Favorites Ballet Flats Ballet Flats Ballet Flats $24.99",
-    "image_url": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
-    "product_url": "https://www2.hm.com/en_us/productpage.1270485012.html",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "H&M",
-    "tags": [
-      "sporty",
-      "elegant",
-      "minimalist"
     ],
     "style_score": 0.7,
     "available": true

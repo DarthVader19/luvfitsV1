@@ -43,7 +43,7 @@ class BaseScraper(ABC):
         if self.session:
             await self.session.close()
 
-    async def scrape_page(self, url: str, render_js: bool = True, headers: dict = {"User-Agent": "Mozilla/5.0",
+    async def scrape_page(self, url: str, render_js: bool = False, headers: dict = {"User-Agent": "Mozilla/5.0",
                          "Accept-Language": "en-US,en;q=0.9",
                          "Accept-Encoding": "gzip, deflate, br",
                          "Connection": "keep-alive"}) -> str:
