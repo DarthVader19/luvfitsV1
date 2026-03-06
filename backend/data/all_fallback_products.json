@@ -1,3802 +1,477 @@
 [
   {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=1",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=2",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=3",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=4",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=5",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=6",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=7",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=8",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=9",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=10",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=11",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=12",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=13",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=14",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=15",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=16",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=17",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=18",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=19",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=20",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=21",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=22",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=23",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Relaxed Knit Pullover",
-    "price": 68.0,
-    "currency": "USD",
-    "color": "Navy",
-    "color_family": "cool",
-    "description": "Cozy knit pullover with relaxed shape.",
-    "image_url": "https://images.example.com/nordstrom/tops/relaxed-knit-pullover.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/relaxed-knit-pullover?fallback=true&slot=24",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Silk Blend Blouse",
-    "price": 79.0,
-    "currency": "USD",
-    "color": "Ivory",
-    "color_family": "neutral",
-    "description": "Soft silk-blend blouse with drape.",
-    "image_url": "https://images.example.com/nordstrom/tops/silk-blend-blouse.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/tops/silk-blend-blouse?fallback=true&slot=25",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.82,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=1",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=2",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=3",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=4",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=5",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=6",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=7",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=8",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=9",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=10",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=11",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=12",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=13",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=14",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=15",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=16",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=17",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=18",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=19",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=20",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=21",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=22",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=23",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Denim Midi Skirt",
-    "price": 72.0,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Structured denim midi skirt with slit.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/denim-midi-skirt.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/denim-midi-skirt?fallback=true&slot=24",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "90s",
-      "casual"
-    ],
-    "style_score": 0.79,
-    "available": true
-  },
-  {
-    "name": "Tailored Wide-Leg Pants",
-    "price": 98.0,
-    "currency": "USD",
-    "color": "Charcoal",
-    "color_family": "neutral",
-    "description": "Tailored wide-leg pants for elevated looks.",
-    "image_url": "https://images.example.com/nordstrom/bottoms/tailored-wide-leg-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/bottoms/tailored-wide-leg-pants?fallback=true&slot=25",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "formal"
-    ],
-    "style_score": 0.83,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=1",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=2",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=3",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=4",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=5",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=6",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=7",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=8",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=9",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=10",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=11",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=12",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=13",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=14",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=15",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=16",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=17",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=18",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=19",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=20",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=21",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=22",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=23",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Pearl Drop Earrings",
-    "price": 48.0,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Pearl drop earrings for formal styling.",
-    "image_url": "https://images.example.com/nordstrom/accessories/pearl-drop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/pearl-drop-earrings?fallback=true&slot=24",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "elegant"
-    ],
-    "style_score": 0.81,
-    "available": true
-  },
-  {
-    "name": "Leather Shoulder Bag",
-    "price": 120.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Structured leather shoulder bag.",
-    "image_url": "https://images.example.com/nordstrom/accessories/leather-shoulder-bag.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/accessories/leather-shoulder-bag?fallback=true&slot=25",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "date night"
-    ],
-    "style_score": 0.84,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
     "currency": "USD",
     "color": "Brown",
     "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=1",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=2",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=3",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=4",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=5",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=6",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=7",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=8",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=9",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=10",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=11",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=12",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=13",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=14",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=15",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=16",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=17",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=18",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=19",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=20",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=21",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=22",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=23",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Slip-On Loafers",
-    "price": 89.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Classic loafers for work and weekend wear.",
-    "image_url": "https://images.example.com/nordstrom/shoes/slip-on-loafers.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/slip-on-loafers?fallback=true&slot=24",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "formal",
-      "minimalist"
-    ],
-    "style_score": 0.8,
-    "available": true
-  },
-  {
-    "name": "Leather Ankle Boots",
-    "price": 139.0,
-    "currency": "USD",
-    "color": "Brown",
-    "color_family": "warm",
-    "description": "Polished ankle boots with block heel.",
-    "image_url": "https://images.example.com/nordstrom/shoes/leather-ankle-boots.jpg",
-    "product_url": "https://fallback.luvfits.local/nordstrom/shoes/leather-ankle-boots?fallback=true&slot=25",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Nordstrom",
-    "tags": [
-      "elegant",
-      "vintage"
-    ],
-    "style_score": 0.85,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=1",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=2",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=3",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=4",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=5",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=6",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=7",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=8",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=9",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=10",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=11",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=12",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=13",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=14",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=15",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=16",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=17",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=18",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=19",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=20",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=21",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=22",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=23",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Button-Down Overshirt",
-    "price": 31.99,
-    "currency": "USD",
-    "color": "Blue",
-    "color_family": "cool",
-    "description": "Light overshirt with relaxed fit.",
-    "image_url": "https://images.example.com/amazon/tops/button-down-overshirt.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/button-down-overshirt?fallback=true&slot=24",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "vintage"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Ribbed Scoop-Neck Tank",
-    "price": 18.5,
-    "currency": "USD",
-    "color": "Gray",
-    "color_family": "neutral",
-    "description": "Ribbed tank top for layering.",
-    "image_url": "https://images.example.com/amazon/tops/ribbed-tank.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/tops/ribbed-scoop-neck-tank?fallback=true&slot=25",
-    "category": "Tops",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "casual",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=1",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=2",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=3",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=4",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=5",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=6",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=7",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=8",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=9",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=10",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=11",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=12",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=13",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=14",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=15",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=16",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=17",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=18",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=19",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=20",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=21",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=22",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=23",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Cargo Jogger Pants",
-    "price": 36.75,
-    "currency": "USD",
-    "color": "Olive",
-    "color_family": "cool",
-    "description": "Stretch cargo joggers with side pockets.",
-    "image_url": "https://images.example.com/amazon/bottoms/cargo-jogger-pants.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/cargo-jogger-pants?fallback=true&slot=24",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.65,
-    "available": true
-  },
-  {
-    "name": "Wide-Leg Trousers",
-    "price": 42.0,
-    "currency": "USD",
-    "color": "Black",
-    "color_family": "neutral",
-    "description": "Flowy wide-leg trousers for office and outings.",
-    "image_url": "https://images.example.com/amazon/bottoms/wide-leg-trousers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/bottoms/wide-leg-trousers?fallback=true&slot=25",
-    "category": "Bottoms",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.68,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=1",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=1",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
-      "party",
-      "date night"
+      "casual",
+      "minimalist"
     ],
-    "style_score": 0.64,
+    "style_score": 0.7,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=2",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=2",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=3",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=3",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=4",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=4",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=5",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=5",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=6",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=6",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=7",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=7",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=8",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=8",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=9",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=9",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=10",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=10",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=11",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=11",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=12",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=12",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=13",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=13",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=14",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=14",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=15",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=15",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=16",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=16",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=17",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=17",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=18",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=18",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=19",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=19",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=20",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=20",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=21",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=21",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=22",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=22",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=23",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Minimal Hoop Earrings",
-    "price": 15.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
+    "currency": "USD",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=23",
+    "category": "Accessories",
+    "subcategory": null,
+    "site": "H&M",
+    "tags": [
+      "casual",
+      "minimalist"
+    ],
+    "style_score": 0.7,
+    "available": true
+  },
+  {
+    "name": "Layered Chain Necklace",
+    "price": 19.99,
     "currency": "USD",
     "color": "Gold",
     "color_family": "warm",
-    "description": "Daily-wear lightweight hoop earrings.",
-    "image_url": "https://images.example.com/amazon/accessories/minimal-hoop-earrings.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/minimal-hoop-earrings?fallback=true&slot=24",
+    "description": "Two-layer chain necklace for styling.",
+    "image_url": "https://images.example.com/hm/accessories/layered-chain-necklace.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/layered-chain-necklace?fallback=true&slot=24",
     "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "minimalist",
-      "casual"
-    ],
-    "style_score": 0.63,
-    "available": true
-  },
-  {
-    "name": "Quilted Crossbody Bag",
-    "price": 29.99,
-    "currency": "USD",
-    "color": "Tan",
-    "color_family": "warm",
-    "description": "Compact quilted crossbody with chain strap.",
-    "image_url": "https://images.example.com/amazon/accessories/quilted-crossbody.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/accessories/quilted-crossbody-bag?fallback=true&slot=25",
-    "category": "Accessories",
-    "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
       "party",
-      "date night"
+      "elegant"
     ],
-    "style_score": 0.64,
+    "style_score": 0.69,
     "available": true
   },
   {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
+    "name": "Structured Tote Bag",
+    "price": 35.99,
     "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=1",
-    "category": "Shoes",
+    "color": "Brown",
+    "color_family": "warm",
+    "description": "Everyday structured tote with roomy interior.",
+    "image_url": "https://images.example.com/hm/accessories/structured-tote-bag.jpg",
+    "product_url": "https://fallback.luvfits.local/hm/accessories/structured-tote-bag?fallback=true&slot=25",
+    "category": "Accessories",
     "subcategory": null,
-    "site": "Amazon",
+    "site": "H&M",
     "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=2",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
+      "casual",
       "minimalist"
     ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=3",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=4",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=5",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=6",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=7",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=8",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=9",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=10",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=11",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=12",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=13",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=14",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=15",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=16",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=17",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=18",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=19",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=20",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=21",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=22",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=23",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
-    "available": true
-  },
-  {
-    "name": "Pointed Toe Flats",
-    "price": 33.5,
-    "currency": "USD",
-    "color": "Nude",
-    "color_family": "neutral",
-    "description": "Classic pointed flats for polished outfits.",
-    "image_url": "https://images.example.com/amazon/shoes/pointed-toe-flats.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/pointed-toe-flats?fallback=true&slot=24",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "elegant",
-      "minimalist"
-    ],
-    "style_score": 0.66,
-    "available": true
-  },
-  {
-    "name": "Breathable Running Sneakers",
-    "price": 54.99,
-    "currency": "USD",
-    "color": "White",
-    "color_family": "neutral",
-    "description": "Lightweight sneakers for all-day comfort.",
-    "image_url": "https://images.example.com/amazon/shoes/breathable-running-sneakers.jpg",
-    "product_url": "https://fallback.luvfits.local/amazon/shoes/breathable-running-sneakers?fallback=true&slot=25",
-    "category": "Shoes",
-    "subcategory": null,
-    "site": "Amazon",
-    "tags": [
-      "sporty",
-      "casual"
-    ],
-    "style_score": 0.67,
+    "style_score": 0.7,
     "available": true
   }
 ]

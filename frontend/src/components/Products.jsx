@@ -4,7 +4,7 @@ import '../styles/Products.css';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
 
 const CATEGORIES = ['All', 'Tops', 'Bottoms', 'Shoes', 'Accessories'];
-const SITES = ['All', 'amazon', 'hm', 'nordstrom'];
+const SITES = ['All', 'amazon', 'h&m', 'nordstrom'];
 
 function Products({ products = [], loading, error, onRefresh }) {
   const [selectedCategory, setSelectedCategory] = useState('All');

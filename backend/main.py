@@ -166,6 +166,62 @@ async def search_outfits(request: SearchRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# add a oufit search using embeddings of query and vibes of outfits
+@app.post("/search/similar", tags=["Search"])
+async def search_outfits_embedding(request: SearchRequest):
+    """
+    Search for outfits using embeddings.
+    
+    Args:
+        request: SearchRequest with query and optional parameters
+        
+    Returns:
+        List of matching outfits
+    """
+    try:
+        logger.info(f"Embedding similarity search query: {request.query}")
+
+        if not request.query or not request.query.strip():
+            raise HTTPException(status_code=400, detail="Query cannot be empty")
+
+        matches = await embedding_service.search_outfits_by_query(
+            query=request.query,
+            limit=request.limit,
+        )
+
+        serialized_results = [
+            {
+                "id": match["outfit"].id,
+                "top_id": match["outfit"].top_id,
+                "bottom_id": match["outfit"].bottom_id,
+                "shoe_id": match["outfit"].shoe_id,
+                "accessory_id": match["outfit"].accessory_id,
+                "vibes": match["outfit"].vibes,
+                "compatibility_score": match["outfit"].compatibility_score,
+                "color_harmony": match["outfit"].color_harmony,
+                "total_price": match["outfit"].total_price,
+                "similarity_score": match["similarity"],
+                "created_at": (
+                    match["outfit"].created_at.isoformat()
+                    if hasattr(match["outfit"].created_at, "isoformat")
+                    else str(match["outfit"].created_at)
+                ),
+            }
+            for match in matches
+        ]
+
+        return {
+            "status": "success",
+            "query": request.query,
+            "results": serialized_results,
+            "count": len(serialized_results),
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Embedding similarity search error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/search/products", tags=["Search"])
 async def search_products(
     query: str = Query(..., description="Product search query"),
@@ -215,8 +271,8 @@ async def search_products(
 @app.get("/products", tags=["Products"])
 async def get_products(
     category: str = Query(None, description="Filter by category (Tops, Bottoms, Shoes, Accessories)"),
-    site: str = Query(None, description="Filter by site (amazon, hm, nordstrom)"),
-    limit: int = Query(50, ge=1, le=200, description="Max results"),
+    site: str = Query(None, description="Filter by site (amazon, h&m, nordstrom)"),
+    limit: int = Query(50, ge=1, le=400, description="Max results"),
 ):
     """
     Get all products, optionally filtered by category or site.
@@ -363,7 +419,7 @@ async def search_outfit_matcher(request: SearchRequest):
 @app.get("/outfits", tags=["Outfits"])
 async def get_outfits(
     vibe: str = Query(None, description="Filter by vibe"),
-    limit: int = Query(10, ge=1, le=50),
+    limit: int = Query(10, ge=1, le=200),
 ):
     """
     Get all outfits, optionally filtered by vibe.
@@ -498,6 +554,23 @@ async def trigger_refresh():
 
     except Exception as e:
         logger.error(f"Refresh error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/embeddings/backfill", tags=["Data Management"])
+async def backfill_embeddings():
+    """Backfill missing embeddings for existing products and outfits."""
+    try:
+        logger.info("Embedding backfill triggered via API")
+        results = await embedding_service.backfill_embeddings()
+
+        return {
+            "status": "success",
+            "message": "Embedding backfill completed",
+            "results": results,
+        }
+    except Exception as e:
+        logger.error(f"Embedding backfill error: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 

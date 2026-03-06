@@ -1,7 +1,13 @@
 """Amazon scraper using Scrape.do API."""
 import logging
 from typing import List, Dict, Any
-from .base_scraper import BaseScraper, ProductExtractor
+
+import sys
+import os 
+ # Adjust the path as needed to import while running the scraper independently
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from scrapers.base_scraper import BaseScraper, ProductExtractor
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +24,7 @@ class AmazonScraper(BaseScraper):
         """Get Amazon search query for category."""
         queries = {
             "Tops": "women+clothing+tops",
-            "Bottoms": "women+clothing+bottoms+jeans+pants",
+            "Bottoms": "women+clothing+bottoms+pants",
             "Accessories": "women+fashion+accessories",
             "Shoes": "women+shoes",
         }
@@ -28,19 +34,37 @@ class AmazonScraper(BaseScraper):
         """Scrape Amazon products."""
         products = []
         categories = ["Tops", "Bottoms", "Accessories", "Shoes"]
+        # categories = [ "Bottoms"]  # Limit to one category for testing
 
         async with self:
-            for category in categories:
+            for category in categories[:]: # Limit to first category for testing
                 query = self._get_category_queries(category)
                 if not query:
                     continue
+                # go to url only if html is not already saved for debugging
+                path_exists = os.path.exists(f"./htmls/amazon_{category.lower()}.html")
+                # if not path_exists:
+                #     print(os.getcwd())  # Ensure directory exists
+                #     break
+                print(f"Checking if HTML file exists for {category}: {path_exists}")  # Debug log
+                if not path_exists:
+                    url = f"{self.base_url}/s?k={query}"
+                    logger.info(f"Path not existing for {category}. Scraping Amazon {category} from {url}")
+                # log the URL being scraped for debugging
+                    print(f"Scraping URL: {url}")
 
-                url = f"{self.base_url}/s?k={query}"
-                logger.info(f"Scraping Amazon {category} from {url}")
-                html = await self.scrape_page(url, render_js=True)
-
+                    html = await self.scrape_page(url, render_js=True)
+                    print(f"Scraped HTML length for {category}: {len(html) if html else 'No HTML'}")  # Debug log
+                # save the HTML to a file for debugging
+                    if html:
+                        with open(f"./htmls/amazon_{category.lower()}.html", "w", encoding="utf-8") as f:
+                          f.write(html if html else "")
+                
+                if path_exists:
+                    with open(f"./htmls/amazon_{category.lower()}.html", "r", encoding="utf-8") as f:
+                        html = f.read()
                 if html:
-                    products.extend(self._extract_products(html, category))
+                    products.extend(await self._extract_products(html, category))
 
         logger.info(f"Amazon: Scraped {len(products)} total products")
         return products
@@ -51,25 +75,42 @@ class AmazonScraper(BaseScraper):
         soup = self.parse_html(html)
 
         # Amazon product result items
-        items = soup.find_all("div", {"data-component-type": "s-search-result"})
+        items = soup.find_all("div", {"data-component-type": "s-search-result", "class": lambda x: x and "s-search-results" in x})
+        logger.debug(f"Found {len(items)} items")
+        # con = input(f"{len(items)} found with data-component-type. Try with class 's-result-item'? (y/n): ")
+        print(f"Found {len(items)} items with data-component-type. Trying with class 's-result-item' if no items found.")  # Debug log
         if not items:
-            items = soup.find_all("div", class_="s-result-item")
-
-        for item in items[:25]:  # Limit to 25 per category
+            items = soup.select("div.s-result-item,div.s-search-results, div[data-component-type='s-search-result']")
+            logger.debug(f"Found {len(items)} items")
+            print(f"Found {len(items)} items with class 's-result-item' or 's-search-results'.")  # Debug log
+        limit = 60
+        elements = []
+        for item in items[:limit]:  # Limit to 25 per category
             try:
                 # Product name and link
-                name_elem = item.find("h2", class_="s-size")
+                # search class contiaing "size" 
+                
+                
+                name_elem = item.find("h2", {"aria-label": True})
+                # print(f"name elem: {name_elem}")# Debug log
+                elements.append(name_elem)  # Save for debugging
+                
                 if not name_elem:
-                    name_elem = item.find("span", class_="a-size-base-plus")
+                    name_elem = item.find("h2", class_=lambda x: x and "a-size-" in x)
 
-                if not name_elem:
-                    continue
+                # if not name_elem:
+                #     continue
 
-                name_link = name_elem.find("a")
-                if not name_link:
-                    continue
-
-                name = name_link.get_text(strip=True)
+                name_link = item.find("a",href=True, class_=lambda x: x and "a-link-normal" in x)
+                # print(f"name link: {name_link.get('href', 'No href')}")# Debug log
+                # if not name_link :
+                #     continue
+                
+                # name_ = name_link.find("span") if name_link else None
+                # print(f"name elem after select: {name_link} type: {type(name_link)}")# Debug log
+                name = name_elem.find("span").get_text(strip=True) if name_elem else "No name"
+                print(f"name: {name}")# Debug log
+                # logger.debug(f"Extracted name: {name}")
                 product_url = name_link.get("href", "")
                 if not product_url.startswith("http"):
                     product_url = self.base_url + product_url
@@ -84,15 +125,17 @@ class AmazonScraper(BaseScraper):
                 image_url = img_elem.get("src", "") if img_elem else ""
 
                 # Color from name
-                color = "Unknown"
+                color = item.find("span",id=lambda x: x and "color_name" in x) if item else None
+                color = color.text.strip() if color else "Unknown"
                 color_keywords = ["black", "white", "blue", "red", "green", "pink", "gray", "brown", "navy", "beige"]
-                for keyword in color_keywords:
-                    if keyword in name.lower():
-                        color = keyword.capitalize()
-                        break
+                if color == "Unknown":
+                    for keyword in color_keywords:
+                        if keyword in name.lower():
+                            color = keyword.capitalize()
+                            break
 
                 # Description
-                description = name
+                description = name + " "+ color + " " + category 
 
                 if name and product_url:
                     color_family = self.extract_color_family(color)
@@ -114,11 +157,32 @@ class AmazonScraper(BaseScraper):
                         "style_score": 0.6,  # Default score
                         "available": True,
                     }
+                    
                     products.append(product)
                     logger.debug(f"Extracted Amazon product: {name}")
 
             except Exception as e:
                 logger.warning(f"Error extracting Amazon product: {e}")
                 continue
+                        # save the name_elem to a file for debugging
+        with open(f"./htmls/amazon_name_elem_{category.lower()}.html", "w", encoding="utf-8") as f:
+                    # write line by line if elements is a list of tags
+                    for elem in elements:
+                        f.write(str(elem) + "\n")
+                    if not elements:
+                        f.write("No name element found")
 
         return products
+    
+
+if __name__ == "__main__":
+    import asyncio
+
+    async def test_scrape():
+        scraper = AmazonScraper()
+        products = await scraper.scrape()
+        print(f"Scraped {len(products)} products from Amazon.")
+        for product in products[:5]:  # Print first 5 products
+            print(product)
+
+    asyncio.run(test_scrape())

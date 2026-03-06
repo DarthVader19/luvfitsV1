@@ -12,6 +12,7 @@ sys.path.insert(0, path_to_backend)
 
 from database.db import mongodb_client
 from database.models import Product, Outfit
+from logic.embedding_search import embedding_service
 
 logger = logging.getLogger(__name__)
 
@@ -43,6 +44,42 @@ class OutfitBuilder:
             "grunge",
         ]
 
+    async def _ensure_product_embeddings(
+        self,
+        products: List[Product],
+        source_collection: str = "auto",
+    ) -> None:
+        """Ensure products have embeddings and persist them when possible."""
+        for product in products:
+            if not product.id or product.embedding:
+                continue
+
+            embedding_text = (
+                f"{product.name} {product.description} "
+                f"{product.category} {product.color} {' '.join(product.tags)}"
+            ).strip()
+            embedding = embedding_service.generate_embedding(embedding_text)
+            if not embedding:
+                continue
+
+            product.embedding = embedding
+            if source_collection == "fallback_products":
+                await mongodb_client.update_fallback_product(
+                    product.id, {"embedding": embedding}
+                )
+            elif source_collection == "products":
+                await mongodb_client.update_product(
+                    product.id, {"embedding": embedding}
+                )
+            else:
+                updated = await mongodb_client.update_product(
+                    product.id, {"embedding": embedding}
+                )
+                if not updated:
+                    await mongodb_client.update_fallback_product(
+                        product.id, {"embedding": embedding}
+                    )
+
     async def create_outfits(self, num_outfits: int = 100) -> List[Outfit]:
         """
         Generate outfit combinations from available products.
@@ -69,16 +106,23 @@ class OutfitBuilder:
         logger.info(f"Real products - Tops: {len(tops)}, Bottoms: {len(bottoms)}, Shoes: {len(shoes)}, Accessories: {len(accessories)}")
 
         # If missing any category entirely, try to fill with fallback products
+        bottoms_from_fallback = False
+        accessories_from_fallback = False
+        shoes_from_fallback = False
+        tops_from_fallback = False
+
         if not bottoms:
             logger.warning("No Bottoms found, attempting to use fallback products...")
             all_fallback = await mongodb_client.get_all_fallback_products(limit=500)
             bottoms = [p for p in all_fallback if p.category == "Bottoms"][:100]
+            bottoms_from_fallback = True
             logger.info(f"Filled Bottoms with {len(bottoms)} fallback products")
         
         if not accessories:
             logger.warning("No Accessories found, attempting to use fallback products...")
             all_fallback = await mongodb_client.get_all_fallback_products(limit=500)
             accessories = [p for p in all_fallback if p.category == "Accessories"][:100]
+            accessories_from_fallback = True
             logger.info(f"Filled Accessories with {len(accessories)} fallback products")
         
         if not shoes or len(shoes) == 0:
@@ -87,6 +131,7 @@ class OutfitBuilder:
             shoes_fallback = [p for p in all_fallback if p.category == "Shoes"][:100]
             if shoes_fallback:
                 shoes = shoes_fallback
+                shoes_from_fallback = True
             logger.info(f"Filled/supplemented Shoes with {len(shoes)} products (fallback)")
         
         if not tops or len(tops) == 0:
@@ -95,11 +140,26 @@ class OutfitBuilder:
             tops_fallback = [p for p in all_fallback if p.category == "Tops"][:100]
             if tops_fallback:
                 tops = tops_fallback
+                tops_from_fallback = True
             logger.info(f"Filled/supplemented Tops with {len(tops)} products (fallback)")
 
         if not all([tops, bottoms, shoes, accessories]):
             logger.error(f"Still missing categories after fallback attempt. Tops: {len(tops)}, Bottoms: {len(bottoms)}, Shoes: {len(shoes)}, Accessories: {len(accessories)}")
             return []
+
+        await self._ensure_product_embeddings(
+            tops, "fallback_products" if tops_from_fallback else "products"
+        )
+        await self._ensure_product_embeddings(
+            bottoms, "fallback_products" if bottoms_from_fallback else "products"
+        )
+        await self._ensure_product_embeddings(
+            shoes, "fallback_products" if shoes_from_fallback else "products"
+        )
+        await self._ensure_product_embeddings(
+            accessories,
+            "fallback_products" if accessories_from_fallback else "products",
+        )
 
         outfits = []
         generated = 0
@@ -138,6 +198,16 @@ class OutfitBuilder:
                                     + shoe.price
                                     + accessory.price
                                 ),
+                            )
+                            products_map = {
+                                top.id: top,
+                                bottom.id: bottom,
+                                shoe.id: shoe,
+                                accessory.id: accessory,
+                            }
+                            outfit.embedding = await embedding_service.generate_outfit_embedding(
+                                outfit,
+                                products_map,
                             )
 
                             outfits.append(outfit)

@@ -221,6 +221,24 @@ class MongoDBClient:
             logger.error(f"Error updating product: {e}")
             return False
 
+    async def update_fallback_product(self, product_id: str, update_data: Dict[str, Any]) -> bool:
+        """Update a fallback product by ID."""
+        from bson import ObjectId
+        try:
+            if self.db is None:
+                logger.error("Database not connected")
+                return False
+            fallback_products = self.db["fallback_products"]
+
+            result = await fallback_products.update_one(
+                {"_id": ObjectId(product_id)},
+                {"$set": update_data},
+            )
+            return result.modified_count > 0
+        except Exception as e:
+            logger.error(f"Error updating fallback product: {e}")
+            return False
+
     # Fallback products operations
 
     async def add_fallback_product(self, product: Product) -> str:
@@ -295,6 +313,24 @@ class MongoDBClient:
         except Exception as e:
             logger.error(f"Error adding outfit: {e}")
             raise
+
+    async def update_outfit(self, outfit_id: str, update_data: Dict[str, Any]) -> bool:
+        """Update an outfit by ID."""
+        from bson import ObjectId
+        try:
+            if self.db is None:
+                logger.error("Database not connected")
+                return False
+            outfits = self.db["outfits"]
+
+            result = await outfits.update_one(
+                {"_id": ObjectId(outfit_id)},
+                {"$set": update_data},
+            )
+            return result.modified_count > 0
+        except Exception as e:
+            logger.error(f"Error updating outfit: {e}")
+            return False
 
     async def get_outfits_by_vibe(
         self, vibe: str, limit: int = 10

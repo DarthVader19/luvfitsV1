@@ -14,6 +14,7 @@ from .amazon_scraper import AmazonScraper
 from .nordstrom_scraper import NordstromScraper
 from database.db import mongodb_client
 from database.models import Product, ScrapingJob
+from logic.embedding_search import embedding_service
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +23,7 @@ class ScraperManager:
     """Manages all scrapers and orchestrates data collection."""
 
     def __init__(self):
-        self.scrapers = [HMScraper(), AmazonScraper(), NordstromScraper()]
+        self.scrapers = [ AmazonScraper(),HMScraper()] #HMScraper(),, NordstromScraper()
         self.categories = ["Tops", "Bottoms", "Accessories", "Shoes"]
         self.target_per_category = int(os.getenv("TARGET_PRODUCTS_PER_CATEGORY", "25"))
         self.fallback_products = self._load_fallback_products()
@@ -253,6 +254,17 @@ class ScraperManager:
         stored = 0
         for product_data in products:
             try:
+                if not product_data.get("embedding"):
+                    embedding_text = (
+                        f"{product_data.get('name', '')} "
+                        f"{product_data.get('description', '')} "
+                        f"{product_data.get('category', '')} "
+                        f"{product_data.get('color', '')} "
+                        f"{' '.join(product_data.get('tags', []))}"
+                    ).strip()
+                    product_data["embedding"] = embedding_service.generate_embedding(
+                        embedding_text
+                    )
                 product = Product(**product_data)
                 await mongodb_client.add_product(product)
                 stored += 1
@@ -270,6 +282,17 @@ class ScraperManager:
         stored = 0
         for product_data in products:
             try:
+                if not product_data.get("embedding"):
+                    embedding_text = (
+                        f"{product_data.get('name', '')} "
+                        f"{product_data.get('description', '')} "
+                        f"{product_data.get('category', '')} "
+                        f"{product_data.get('color', '')} "
+                        f"{' '.join(product_data.get('tags', []))}"
+                    ).strip()
+                    product_data["embedding"] = embedding_service.generate_embedding(
+                        embedding_text
+                    )
                 product = Product(**product_data)
                 await mongodb_client.add_fallback_product(product)
                 stored += 1

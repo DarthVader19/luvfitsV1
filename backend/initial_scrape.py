@@ -1,6 +1,6 @@
 #intial data scrape to populate the database with the initial data
 import asyncio
-from backend.scrapers.scraper_manager import ScraperManager
+from scrapers.scraper_manager import ScraperManager
 
 async def initial_scrape():
     """Perform initial data scrape to populate the database."""

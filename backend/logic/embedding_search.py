@@ -63,14 +63,24 @@ class EmbeddingService:
         logger.info(f"Embedding {len(products)} products...")
 
         for product in products:
+            if product.embedding:
+                continue
+
             # Create embedding text from product metadata
-            embedding_text = f"{product.name} {product.description} {' '.join(product.tags)}"
+            embedding_text = (
+                f"{product.name} {product.description} "
+                f"{product.category} {product.color} {' '.join(product.tags)}"
+            )
 
             embedding = self.generate_embedding(embedding_text)
 
             if embedding:
-                # Update product with embedding in MongoDB
-                # This would normally update via MongoDB client
+                product.embedding = embedding
+                if product.id:
+                    await mongodb_client.update_product(
+                        product.id,
+                        {"embedding": embedding},
+                    )
                 logger.debug(f"Embedded product: {product.name}")
 
         logger.info("Embedding complete")
@@ -165,6 +175,161 @@ class EmbeddingService:
         # Sort and return
         scored_outfits.sort(key=lambda x: x[1], reverse=True)
         return [o[0] for o in scored_outfits[:limit]]
+
+    async def search_outfits_by_query(
+        self, query: str, limit: int = 10, min_similarity: float = 0.0
+    ) -> List[Dict[str, Any]]:
+        """
+        Search outfits by query embedding similarity.
+
+        Returns:
+            List of dicts with keys: outfit, similarity
+        """
+        if not self.model or not query.strip():
+            return []
+
+        query_embedding = self.generate_embedding(query)
+        if not query_embedding:
+            return []
+
+        all_outfits = await mongodb_client.get_all_outfits(limit=1000)
+        scored_outfits = []
+
+        for outfit in all_outfits:
+            outfit_embedding = outfit.embedding
+
+            # Fallback for outfits without persisted embeddings.
+            if not outfit_embedding and outfit.vibes:
+                outfit_embedding = self.generate_embedding(" ".join(outfit.vibes))
+
+            if not outfit_embedding:
+                continue
+
+            similarity = float(
+                self.cosine_similarity(query_embedding, outfit_embedding)
+            )
+            if similarity >= min_similarity:
+                scored_outfits.append(
+                    {
+                        "outfit": outfit,
+                        "similarity": similarity,
+                    }
+                )
+
+        scored_outfits.sort(key=lambda x: x["similarity"], reverse=True)
+        return scored_outfits[:limit]
+
+    async def backfill_embeddings(self) -> Dict[str, int]:
+        """Backfill missing embeddings for products, fallback products, and outfits."""
+        if not self.model:
+            logger.error("Embedding model not available for backfill")
+            return {
+                "products_updated": 0,
+                "fallback_products_updated": 0,
+                "outfits_updated": 0,
+            }
+
+        products_updated = 0
+        fallback_updated = 0
+        outfits_updated = 0
+        batch_size = 200
+
+        all_products: List[Product] = []
+        all_fallback_products: List[Product] = []
+
+        # Backfill products embeddings
+        skip = 0
+        while True:
+            batch = await mongodb_client.get_all_products(skip=skip, limit=batch_size)
+            if not batch:
+                break
+            all_products.extend(batch)
+
+            for product in batch:
+                if product.embedding or not product.id:
+                    continue
+                embedding_text = (
+                    f"{product.name} {product.description} "
+                    f"{product.category} {product.color} {' '.join(product.tags)}"
+                ).strip()
+                embedding = self.generate_embedding(embedding_text)
+                if not embedding:
+                    continue
+                updated = await mongodb_client.update_product(
+                    product.id,
+                    {"embedding": embedding},
+                )
+                if updated:
+                    product.embedding = embedding
+                    products_updated += 1
+
+            skip += batch_size
+
+        # Backfill fallback product embeddings
+        skip = 0
+        while True:
+            batch = await mongodb_client.get_all_fallback_products(
+                skip=skip, limit=batch_size
+            )
+            if not batch:
+                break
+            all_fallback_products.extend(batch)
+
+            for product in batch:
+                if product.embedding or not product.id:
+                    continue
+                embedding_text = (
+                    f"{product.name} {product.description} "
+                    f"{product.category} {product.color} {' '.join(product.tags)}"
+                ).strip()
+                embedding = self.generate_embedding(embedding_text)
+                if not embedding:
+                    continue
+                updated = await mongodb_client.update_fallback_product(
+                    product.id,
+                    {"embedding": embedding},
+                )
+                if updated:
+                    product.embedding = embedding
+                    fallback_updated += 1
+
+            skip += batch_size
+
+        # Build product map for outfit embedding generation
+        products_map: Dict[str, Product] = {}
+        for product in all_products + all_fallback_products:
+            if product.id:
+                products_map[product.id] = product
+
+        # Backfill outfit embeddings
+        skip = 0
+        while True:
+            outfits_batch = await mongodb_client.get_all_outfits(
+                skip=skip, limit=batch_size
+            )
+            if not outfits_batch:
+                break
+
+            for outfit in outfits_batch:
+                if outfit.embedding or not outfit.id:
+                    continue
+                embedding = await self.generate_outfit_embedding(outfit, products_map)
+                if not embedding:
+                    continue
+                updated = await mongodb_client.update_outfit(
+                    outfit.id,
+                    {"embedding": embedding},
+                )
+                if updated:
+                    outfits_updated += 1
+
+            skip += batch_size
+
+        return {
+            "products_updated": products_updated,
+            "fallback_products_updated": fallback_updated,
+            "outfits_updated": outfits_updated,
+        }
 
 
 # Global embedding service instance
