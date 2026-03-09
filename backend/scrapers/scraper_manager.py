@@ -23,7 +23,7 @@ class ScraperManager:
     """Manages all scrapers and orchestrates data collection."""
 
     def __init__(self):
-        self.scrapers = [ AmazonScraper(),HMScraper()] #HMScraper(),, NordstromScraper()
+        self.scrapers = [ NordstromScraper()] #HMScraper(),, ,AmazonScraper()
         self.categories = ["Tops", "Bottoms", "Accessories", "Shoes"]
         self.target_per_category = int(os.getenv("TARGET_PRODUCTS_PER_CATEGORY", "25"))
         self.fallback_products = self._load_fallback_products()

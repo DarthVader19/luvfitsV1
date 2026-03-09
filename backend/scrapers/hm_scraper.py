@@ -646,6 +646,8 @@ class HMScraper(BaseScraper):
     }
 
     PRODUCT_SELECTORS = [
+        "#products-listing-section ul[data-elid='product-grid'] article[data-articlecode]",
+        "#products-listing-section article[data-articlecode]",
         "article[data-articlecode]",
         "div[data-articlecode]",
         "li.product-item",
@@ -866,6 +868,16 @@ class HMScraper(BaseScraper):
 
     def _find_items(self, soup) -> Tuple[str | None, List[Any]]:
         """Find product card nodes using known selector fallbacks."""
+        listing_root = soup.select_one("#products-listing-section")
+        if listing_root:
+            for selector in [
+                "ul[data-elid='product-grid'] article[data-articlecode]",
+                "article[data-articlecode]",
+            ]:
+                found = listing_root.select(selector)
+                if found:
+                    return f"#products-listing-section {selector}", found
+
         for selector in self.PRODUCT_SELECTORS:
             found = soup.select(selector)
             if found:
@@ -980,32 +992,37 @@ class HMScraper(BaseScraper):
     async def _parse_item(self, item, category: str) -> Dict[str, Any] | None:
         """Parse one product card."""
         try:
-            name_elem = item.select_one("a[href*='/productpage.'], a.link, a.item-link")
-            if not name_elem:
+            link_elem = item.select_one("a[href*='/productpage.']")
+            if not link_elem:
                 return None
 
-            name = name_elem.get("title") or name_elem.get_text(strip=True) or "H&M Product"
-            href = name_elem.get("href", "")
+            name_elem = item.select_one("h2, a[title]")
+            name = (
+                (name_elem.get_text(strip=True) if name_elem else "")
+                or link_elem.get("title")
+                or link_elem.get_text(strip=True)
+                or "H&M Product"
+            )
+
+            href = link_elem.get("href", "")
             if not href:
                 return None
             product_url = href if href.startswith("http") else urljoin(self.base_url, href)
 
             price_elem = item.select_one(
-                "span.price-now, span.a-price, span[data-price], [class*='price']"
+                "span[translate='no'], p.fcfd58 span, span.price-now, span.a-price, span[data-price], [class*='price']"
             )
             price_text = price_elem.get_text(" ", strip=True) if price_elem else "0"
             price = self.extract_price(price_text)
+            currency = "INR" if ("rs" in price_text.lower() or "inr" in price_text.lower()) else "USD"
 
             img_elem = item.find("img")
             image_url = ""
             alt_text = ""
             if img_elem:
-                image_url = (
-                    img_elem.get("src")
-                    or img_elem.get("data-src")
-                    or img_elem.get("data-altimage")
-                    or ""
-                )
+                image_url = img_elem.get("data-src") or img_elem.get("src") or img_elem.get("data-altimage") or ""
+                if image_url.startswith("data:image"):
+                    image_url = img_elem.get("data-src") or img_elem.get("data-altimage") or ""
                 alt_text = img_elem.get("alt", "")
 
             description = " ".join([name, item.get_text(" ", strip=True)[:200]]).strip()
@@ -1020,7 +1037,7 @@ class HMScraper(BaseScraper):
             return {
                 "name": name,
                 "price": price,
-                "currency": "USD",
+                "currency": currency,
                 "color": color,
                 "color_family": self.extract_color_family(color),
                 "description": description,
