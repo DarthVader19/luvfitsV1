@@ -23,7 +23,7 @@ class ScraperManager:
     """Manages all scrapers and orchestrates data collection."""
 
     def __init__(self):
-        self.scrapers = [ AmazonScraper(),HMScraper()] #HMScraper(),, NordstromScraper()
+        self.scrapers = [ NordstromScraper()] #HMScraper(),, ,AmazonScraper()
         self.categories = ["Tops", "Bottoms", "Accessories", "Shoes"]
         self.target_per_category = int(os.getenv("TARGET_PRODUCTS_PER_CATEGORY", "25"))
         self.fallback_products = self._load_fallback_products()
@@ -331,7 +331,8 @@ class ScraperManager:
             logger.info("Phase 2: Generating outfits from scraped products...")
             try:
                 from logic.outfit_builder import outfit_builder
-                outfits = await outfit_builder.create_outfits(num_outfits=50)
+                num_of_otfits = int(os.getenv("NUM_OUTFITS_TO_GENERATE", "100"))
+                outfits = await outfit_builder.create_outfits(num_outfits=num_of_otfits)
                 logger.info(f"Created {len(outfits)} outfit combinations")
                 
                 if outfits:
