@@ -35,7 +35,7 @@ class NordstromScraper(BaseScraper):
             "sec-fetch-user": "?1",
             "upgrade-insecure-requests": "1",
         }
-        self._max_retries_per_mode = 3
+        self._max_retries_per_mode = 1
 
     def _get_category_url(self, category: str) -> str:
         """Get Nordstrom category URL."""
@@ -163,11 +163,11 @@ class NordstromScraper(BaseScraper):
         logger.error("Nordstrom fetch exhausted retries url=%s", url)
         return ""
 
-    async def scrape(self) -> List[Dict[str, Any]]:
+    async def scrape(self,categories = ["Tops", "Bottoms", "Accessories", "Shoes"]) -> List[Dict[str, Any]]:
         """Scrape Nordstrom products."""
         products = []
-        # categories = ["Tops", "Bottoms", "Accessories", "Shoes"]
-        categories = [ "Accessories"]
+        
+        # categories = [ "Accessories"]
         async with self:
             for category in categories[:1]:  # Limit to first category for testing
                 url = self._get_category_url(category)

@@ -896,7 +896,11 @@ class HMScraper(BaseScraper):
                     logger.info(f"[DEBUG] Category={category} urls={len(urls)}")
                 for url in urls:
                     logger.info(f"Scraping H&M {category} from {url}")
-                    html = await self._fetch_with_retry(url, debug=debug)
+                    # check if html available in cache before fetching
+                    if self._cache_file_path(category).exists():
+                        html = self._load_cached_html(category)
+                    else:
+                        html = await self._fetch_with_retry(url, debug=debug)
                     if not html:
                         html = self._load_cached_html(category)
                         if html:

@@ -7,7 +7,8 @@ import asyncio
 import sys 
 
 # Add parent directory to path for imports
-import os   
+import os
+import json   
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
     
 
@@ -75,6 +76,53 @@ async def refresh_tags():
 
 #run refresh tags for all outfits as well to update vibe field
 
+
+# update the color field and style score for all products by re-scraping the product pages and extracting the color and style score using the same logic as in the amazon scraper. This will ensure that we have accurate and up-to-date information for all products in our database.
+
+from scrapers.amazon_scraper import AmazonScraper
+from scrapers.nordstrom_scraper import NordstromScraper
+from scrapers.hm_scraper import HMScraper
+
+
+
+async def update_product_info_from_scraped_data():
+    # scrape
+    am_scraper = AmazonScraper()
+    nord_scraper = NordstromScraper()
+    hm_scraper = HMScraper()
+    site_scrapers ={"amazon": am_scraper, "nordstrom": nord_scraper, "h&m": hm_scraper}
+    # connect to database
+    await mongodb_client.connect()
+    # get all products from database
+    products = await mongodb_client.get_all_products(limit=1000)
+    updated_products=[]
+    for product in products:
+        # check if color is unknown and then scrape the product page to try to extract the color
+        if product.color == "Unknown":
+            scraper = site_scrapers.get(product.site.lower())
+            if scraper:
+                scraped_products = await scraper.scrape(categories=[product.category]) if product.site.lower() in ["amazon", "nordstrom"] else await scraper.scrape()
+                
+                # find the scraped product that matches the product url
+                for scraped_product in scraped_products:
+                    if scraped_product["product_url"] == product.product_url:
+                        # update the color and style score in the database
+                        await mongodb_client.update_product(
+                            str(product.id),
+                            {"color": scraped_product["color"], "style_score": scraped_product["style_score"], "updated_at": datetime.datetime.utcnow()}
+                        )
+                        logger.info(f"Updated product {product.id} with color {scraped_product['color']} and style score {scraped_product['style_score']}")
+                        updated_products.append(product)
+                        break
+    # save these updates in the data folder in json format with the filename "updated_products.json"
+    
+    with open("data/updated_products.json", "w") as f:
+        json.dump([product.dict() for product in updated_products], f)
+
+
+
 if __name__ == "__main__":
-    asyncio.run(refresh_tags())
+    # asyncio.run(refresh_tags())
+    asyncio.run(update_product_info_from_scraped_data())
+    
                 

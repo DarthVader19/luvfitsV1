@@ -12,8 +12,8 @@
     "subcategory": null,
     "site": "Nordstrom",
     "tags": [
-      "sporty",
-      "elegant"
+      "elegant",
+      "sporty"
     ],
     "style_score": 0.65,
     "available": true
@@ -31,9 +31,9 @@
     "subcategory": null,
     "site": "Nordstrom",
     "tags": [
-      "sporty",
+      "elegant",
       "minimalist",
-      "elegant"
+      "sporty"
     ],
     "style_score": 0.65,
     "available": true
@@ -69,9 +69,9 @@
     "subcategory": null,
     "site": "Nordstrom",
     "tags": [
-      "sporty",
+      "elegant",
       "minimalist",
-      "elegant"
+      "sporty"
     ],
     "style_score": 0.65,
     "available": true
@@ -89,9 +89,9 @@
     "subcategory": null,
     "site": "Nordstrom",
     "tags": [
+      "elegant",
       "vintage",
-      "sporty",
-      "elegant"
+      "sporty"
     ],
     "style_score": 0.65,
     "available": true

@@ -2,6 +2,8 @@
 import logging
 from typing import List, Dict, Any
 
+import requests
+import ollama
 import sys
 import os 
  # Adjust the path as needed to import while running the scraper independently
@@ -30,10 +32,10 @@ class AmazonScraper(BaseScraper):
         }
         return queries.get(category, "")
 
-    async def scrape(self) -> List[Dict[str, Any]]:
+    async def scrape(self, categories = ["Tops", "Bottoms", "Accessories", "Shoes"],limit=100) -> List[Dict[str, Any]]:
         """Scrape Amazon products."""
         products = []
-        categories = ["Tops", "Bottoms", "Accessories", "Shoes"]
+        
         # categories = [ "Bottoms"]  # Limit to one category for testing
 
         async with self:
@@ -47,6 +49,7 @@ class AmazonScraper(BaseScraper):
                 #     print(os.getcwd())  # Ensure directory exists
                 #     break
                 print(f"Checking if HTML file exists for {category}: {path_exists}")  # Debug log
+                logger.info(f"Checking if HTML file exists for {category}: {path_exists}")
                 if not path_exists:
                     url = f"{self.base_url}/s?k={query}"
                     logger.info(f"Path not existing for {category}. Scraping Amazon {category} from {url}")
@@ -64,12 +67,12 @@ class AmazonScraper(BaseScraper):
                     with open(f"./htmls/amazon_{category.lower()}.html", "r", encoding="utf-8") as f:
                         html = f.read()
                 if html:
-                    products.extend(await self._extract_products(html, category))
+                    products.extend(await self._extract_products(html, category,limit=limit))
 
         logger.info(f"Amazon: Scraped {len(products)} total products")
         return products
 
-    async def _extract_products(self, html: str, category: str) -> List[Dict[str, Any]]:
+    async def _extract_products(self, html: str, category: str,limit:int=100) -> List[Dict[str, Any]]:
         """Extract products from Amazon HTML."""
         products = []
         soup = self.parse_html(html)
@@ -83,7 +86,7 @@ class AmazonScraper(BaseScraper):
             items = soup.select("div.s-result-item,div.s-search-results, div[data-component-type='s-search-result']")
             logger.debug(f"Found {len(items)} items")
             print(f"Found {len(items)} items with class 's-result-item' or 's-search-results'.")  # Debug log
-        limit = 60
+          # 
         elements = []
         for item in items[:limit]:  # Limit to 25 per category
             try:
@@ -108,18 +111,23 @@ class AmazonScraper(BaseScraper):
                 
                 # name_ = name_link.find("span") if name_link else None
                 # print(f"name elem after select: {name_link} type: {type(name_link)}")# Debug log
-                name = name_elem.find("span").get_text(strip=True) if name_elem else "No name"
-                print(f"name: {name}")# Debug log
-                # logger.debug(f"Extracted name: {name}")
+                name = name_elem.find("span").get_text(strip=True) if name_elem else None
+                # print(f"name: {name}")# Debug log
+                logger.debug(f"Extracted name: {name}")
+
                 product_url = name_link.get("href", "")
                 if not product_url.startswith("http"):
                     product_url = self.base_url + product_url
 
                 # Price
                 price_elem = item.find("span", class_="a-price-whole")
+                price_symbol = item.find("span", class_="a-price-symbol").text.strip()
+
                 price_text = price_elem.text.strip() if price_elem else "0"
                 price = self.extract_price(price_text)
 
+                logger.debug(f"Extracted price: {price} from text: {price_text}")
+                logger.info(f"Extracted product - Name: {name}, Price: {price}")
                 # Image
                 img_elem = item.find("img", class_="s-image")
                 image_url = img_elem.get("src", "") if img_elem else ""
@@ -127,20 +135,31 @@ class AmazonScraper(BaseScraper):
                 # Color from name
                 color = item.find("span",id=lambda x: x and "color_name" in x) if item else None
                 color = color.text.strip() if color else "Unknown"
-                color_keywords = ["black", "white", "blue", "red", "green", "pink", "gray", "brown", "navy", "beige"]
+                
                 if color == "Unknown":
-                    for keyword in color_keywords:
-                        if keyword in name.lower():
-                            color = keyword.capitalize()
-                            break
+                    # go to product url and try to extract color from there
+                    product_html = await self.scrape_page(product_url, render_js=True)
+                    product_soup = self.parse_html(product_html)
+                    color_elem = product_soup.find("span", id=lambda x: x and "color_name" in x)
+                    color = color_elem.text.strip() if color_elem else "Unknown"
+                    # price 
+                    
+                    if price_symbol !="$":
+                        price_elem = product_soup.find("span", class_="a-price-whole")
+                        price_text = price_elem.text.strip() if price_elem else "0"
+                        price = self.extract_price(price_text)
+                    
 
                 # Description
-                description = name + " "+ color + " " + category 
+                print(f"Extracted product - Name: {name}, Price: {price} {price_symbol} , color :{color}")
+                # print(item.find("span"))  # Debug log
 
+                description =  "color: " + " " +color + " " + "category: " + " " +category 
+                 
                 if name and product_url:
                     color_family = self.extract_color_family(color)
                     vibes = await ProductExtractor.extract_vibes(name, description, price)
-
+                    score = await ProductExtractor.calculate_style_score(name, description)
                     product = {
                         "name": name,
                         "price": price,
@@ -154,7 +173,7 @@ class AmazonScraper(BaseScraper):
                         "subcategory": None,
                         "site": self.site_name,
                         "tags": vibes,
-                        "style_score": 0.6,  # Default score
+                        "style_score": score,  
                         "available": True,
                     }
                     
@@ -173,6 +192,9 @@ class AmazonScraper(BaseScraper):
                         f.write("No name element found")
 
         return products
+    
+
+
     
 
 if __name__ == "__main__":

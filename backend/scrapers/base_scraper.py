@@ -13,6 +13,8 @@ from abc import ABC, abstractmethod
 import aiohttp
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+import ollama
+import requests
 
 # Load backend/.env and project-root/.env if present.
 _BACKEND_DIR = Path(__file__).resolve().parents[1]
@@ -72,8 +74,21 @@ class BaseScraper(ABC):
                 if response.status == 200:
                     return await response.text()
                 else:
-                    logger.error(f"Failed to scrape {url}: {response.status}")
-                    return ""
+                    logger.warning(f"Failed to scrape {url}: {response.status}, {type(response.status)}")
+                    if response.status in [403,401]:
+                        # try using request library as fallback for 403 or 401 errors which might indicate bot detection
+                        logger.info(f"Attempting fallback scraping for {url} using requests library due to status {response.status}")
+                        try:
+                            resp = requests.get(url, headers=headers, timeout=30)
+                            if resp.status_code == 200:
+                                print(f"Fallback scraping successful for {url} with status {resp.status_code}")
+                                return resp.text
+                            else:
+                                logger.error(f"Fallback scraping also failed for {url}: {resp.status_code}")
+                        except Exception as e:
+                            logger.error(f"Error during fallback scraping for {url}: {e}")
+
+                        return ""
         except asyncio.TimeoutError:
             logger.error(f"Timeout scraping {url}")
             return ""
@@ -185,6 +200,44 @@ class ProductExtractor:
             logger.warning(f"No vibe tags extracted (keyword or AI) for: {name}")
         
         return unique_tags
+    
+    async def calculate_style_score(self, name: str, description: str) -> float:
+        """Calculate style score using ollama model."""
+        prompt = f"On a scale of 0 to 10, how stylish is an item with the following name and description? Name: {name} Description: {description} Just respond with the number."
+        ollama_client = OllamaClient()
+        score = await ollama_client.get_response(prompt)
+        try:
+            return float(score.strip())
+        except ValueError:
+            logger.warning(f"Could not convert style score to float: '{score}'")
+            return 0.0
+
+
+class OllamaClient:
+    """Client for interacting with Ollama API."""
+   
+
+    def __init__(self, model_name: str = "qwen3:0.6b"):
+        self.model_name = model_name
+        
+    
+    async def get_response(self, prompt: str) -> str:
+        """Get response from Ollama model."""
+        try:
+            response = ollama.chat(
+                self.model_name,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            logger.info(f"Ollama respons': {response}")
+            return response.get("message", {}).get("content", "0")
+        except Exception as e:
+            logger.error(f"Error getting response from Ollama: {e}")
+            return "0"  # Default to 0 if there's an error
+
+    
+
+
+
 
 from transformers import pipeline
 from typing import List
